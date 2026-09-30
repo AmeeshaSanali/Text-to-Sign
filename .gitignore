@@ -1,0 +1,56 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment variables
+.env
+.env.local
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDEs
+.idea/
+.vscode/
+
+# Unity
+/[Uu]nity/[Ll]ibrary/
+/[Uu]nity/[Tt]emp/
+/[Uu]nity/[Oo]bj/
+/[Uu]nity/[Bb]uild/
+/[Uu]nity/[Bb]uilds/
+/[Uu]nity/[Ll]ogs/
+/[Uu]nity/[Uu]ser[Ss]ettings/
+/[Uu]nity/[Mm]emoryCaptures/
+/[Uu]nity/[Aa]ssets/Plugins/Editor/JetBrains*
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.opendb
+*.VC.db

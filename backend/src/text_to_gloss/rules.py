@@ -1,0 +1,194 @@
+"""Linguistic rules, stopwords, and dictionary mappings for rule-based gloss translation."""
+
+from typing import Dict, List, Set
+
+# Words omitted in standard sign language glossing (articles, copulas, grammatical particles)
+STOPWORDS_OMIT: Set[str] = {
+    "a", "an", "the",
+    "am", "is", "are", "was", "were", "be", "been", "being",
+    "to", "of", "for", "with", "by", "at", "from", "into", "onto",
+    "do", "does", "did",  # auxiliary do (unless emphatic/action)
+}
+
+# Multi-word phrases mapped to single or combined sign glosses
+PHRASE_MAPPINGS: Dict[str, List[str]] = {
+    "thank you": ["THANK-YOU"],
+    "thanks a lot": ["THANK-YOU"],
+    "good morning": ["GOOD", "MORNING"],
+    "good night": ["GOOD", "NIGHT"],
+    "how are you": ["HOW", "YOU"],
+    "see you later": ["SEE", "LATER"],
+    "what's up": ["WHAT", "UP"],
+    "what is your name": ["YOUR", "NAME", "WHAT"],
+    "my name is": ["MY", "NAME"],
+    "nice to meet you": ["NICE", "MEET", "YOU"],
+    "excuse me": ["EXCUSE-ME"],
+    "i am sorry": ["SORRY"],
+    "i'm sorry": ["SORRY"],
+    "dont know": ["DONT-KNOW"],
+    "don't know": ["DONT-KNOW"],
+    "dont want": ["DONT-WANT"],
+    "don't want": ["DONT-WANT"],
+}
+
+# Core dictionary mapping word stems/inflections to uppercase gloss tokens
+WORD_TO_GLOSS: Dict[str, str] = {
+    # Pronouns
+    "i": "I",
+    "me": "I",
+    "my": "MY",
+    "mine": "MY",
+    "you": "YOU",
+    "your": "YOUR",
+    "yours": "YOUR",
+    "we": "WE",
+    "us": "WE",
+    "our": "OUR",
+    "he": "HE",
+    "him": "HE",
+    "his": "HIS",
+    "she": "SHE",
+    "her": "SHE",
+    "hers": "HER",
+    "it": "IT",
+    "they": "THEY",
+    "them": "THEY",
+    "their": "THEIR",
+
+    # Greetings & Common Social Expressions
+    "hello": "HELLO",
+    "hi": "HELLO",
+    "hey": "HELLO",
+    "goodbye": "GOODBYE",
+    "bye": "GOODBYE",
+    "thanks": "THANK-YOU",
+    "welcome": "WELCOME",
+    "please": "PLEASE",
+    "sorry": "SORRY",
+    "yes": "YES",
+    "yeah": "YES",
+    "no": "NO",
+    "not": "NOT",
+    "never": "NEVER",
+
+    # Common Verbs
+    "go": "GO",
+    "going": "GO",
+    "goes": "GO",
+    "went": "GO",
+    "gone": "GO",
+    "come": "COME",
+    "coming": "COME",
+    "comes": "COME",
+    "came": "COME",
+    "want": "WANT",
+    "wants": "WANT",
+    "wanted": "WANT",
+    "need": "NEED",
+    "needs": "NEED",
+    "needed": "NEED",
+    "like": "LIKE",
+    "likes": "LIKE",
+    "liked": "LIKE",
+    "love": "LOVE",
+    "loves": "LOVE",
+    "loved": "LOVE",
+    "eat": "EAT",
+    "eats": "EAT",
+    "eating": "EAT",
+    "ate": "EAT",
+    "drink": "DRINK",
+    "drinks": "DRINK",
+    "drinking": "DRINK",
+    "drank": "DRINK",
+    "see": "SEE",
+    "seeing": "SEE",
+    "saw": "SEE",
+    "look": "LOOK",
+    "help": "HELP",
+    "helps": "HELP",
+    "helping": "HELP",
+    "helped": "HELP",
+    "learn": "LEARN",
+    "learning": "LEARN",
+    "learned": "LEARN",
+    "know": "KNOW",
+    "knows": "KNOW",
+    "knew": "KNOW",
+    "sign": "SIGN",
+    "signing": "SIGN",
+    "signed": "SIGN",
+    "work": "WORK",
+    "working": "WORK",
+    "worked": "WORK",
+    "play": "PLAY",
+    "playing": "PLAY",
+    "played": "PLAY",
+    "stop": "STOP",
+    "wait": "WAIT",
+    "understand": "UNDERSTAND",
+
+    # Nouns & Places
+    "store": "STORE",
+    "shop": "STORE",
+    "market": "STORE",
+    "school": "SCHOOL",
+    "home": "HOME",
+    "house": "HOUSE",
+    "water": "WATER",
+    "food": "FOOD",
+    "book": "BOOK",
+    "car": "CAR",
+    "teacher": "TEACHER",
+    "student": "STUDENT",
+    "friend": "FRIEND",
+    "family": "FAMILY",
+    "father": "FATHER",
+    "mother": "MOTHER",
+    "brother": "BROTHER",
+    "sister": "SISTER",
+    "name": "NAME",
+    "sign-language": "SIGN-LANGUAGE",
+
+    # Time markers (often moved to front in sign grammar)
+    "now": "NOW",
+    "today": "TODAY",
+    "yesterday": "YESTERDAY",
+    "tomorrow": "TOMORROW",
+    "morning": "MORNING",
+    "night": "NIGHT",
+    "day": "DAY",
+    "later": "LATER",
+    "before": "BEFORE",
+    "after": "AFTER",
+
+    # Question words (Wh-questions often moved to end)
+    "who": "WHO",
+    "what": "WHAT",
+    "where": "WHERE",
+    "when": "WHEN",
+    "why": "WHY",
+    "how": "HOW",
+    "which": "WHICH",
+
+    # Adjectives & Descriptors
+    "good": "GOOD",
+    "bad": "BAD",
+    "happy": "HAPPY",
+    "sad": "SAD",
+    "fine": "FINE",
+    "big": "BIG",
+    "small": "SMALL",
+    "hot": "HOT",
+    "cold": "COLD",
+}
+
+# Words that should be prioritized as fronted time markers
+TIME_MARKERS: Set[str] = {
+    "YESTERDAY", "TODAY", "TOMORROW", "NOW", "BEFORE", "AFTER", "LATER"
+}
+
+# Question markers that often shift to end of sentence in ASL / sign grammar
+QUESTION_MARKERS: Set[str] = {
+    "WHO", "WHAT", "WHERE", "WHEN", "WHY", "HOW", "WHICH"
+}
