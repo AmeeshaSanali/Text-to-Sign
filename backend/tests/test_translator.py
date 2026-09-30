@@ -1,7 +1,9 @@
-"""Tests for Text-to-Gloss engine."""
-
 import pytest
-from backend.src.text_to_gloss.translator import DictionaryGlossTranslator
+
+try:
+    from src.text_to_gloss.translator import DictionaryGlossTranslator
+except ImportError:
+    from backend.src.text_to_gloss.translator import DictionaryGlossTranslator
 
 
 @pytest.fixture

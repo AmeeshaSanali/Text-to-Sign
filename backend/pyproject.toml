@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "slsl-backend"
+version = "0.1.0"
+description = "Text-to-Sign Avatar Backend"
+authors = [{ name = "Nipun" }]
+dependencies = [
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.28.0",
+    "pydantic>=2.6.0",
+    "pytest>=8.0.0",
+    "httpx>=0.27.0",
+]
+
+[project.scripts]
+slsl-cli = "src.cli:run_cli"
+slsl-server = "uvicorn:main"
+
+[tool.setuptools]
+packages = ["src", "src.text_to_gloss"]
+

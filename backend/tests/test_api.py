@@ -2,7 +2,11 @@
 
 import pytest
 from fastapi.testclient import TestClient
-from backend.src.app import app
+
+try:
+    from src.app import app
+except ImportError:
+    from backend.src.app import app
 
 client = TestClient(app)
 

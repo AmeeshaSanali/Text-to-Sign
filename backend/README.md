@@ -28,13 +28,16 @@ source .venv/bin/activate
 ```
 
 ### 2. Run Interactive CLI
+From the `backend/` folder:
 ```bash
-python -m backend.src.cli
+python run_cli.py "I am going to the store"
 ```
-Or pass a sentence directly:
+Or interactively:
 ```bash
-python -m backend.src.cli "I am going to the store"
+python run_cli.py
 ```
+*(Alternative: `python -m src.cli "I am going to the store"`)*
+
 Output:
 ```
 [Original]: I am going to the store
@@ -42,13 +45,16 @@ Output:
 ```
 
 ### 3. Run FastAPI Backend Server
+From the `backend/` folder:
 ```bash
-python -m uvicorn backend.src.app:app --reload --port 8000
+python run_server.py
 ```
+*(Alternative: `python -m uvicorn src.app:app --reload --port 8000`)*
+
 - Open Swagger API Documentation in browser: **http://127.0.0.1:8000/docs**
 - Test health check: **http://127.0.0.1:8000/health**
 
 ### 4. Run Unit Tests
 ```bash
-PYTHONPATH=. pytest backend/tests/ -v
+pytest tests/ -v
 ```
