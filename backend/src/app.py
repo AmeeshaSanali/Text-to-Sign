@@ -3,6 +3,7 @@
 from typing import List, Optional
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import HTMLResponse
 from pydantic import BaseModel, Field
 
 from .text_to_gloss.translator import (
@@ -31,6 +32,100 @@ app.add_middleware(
 translator = DictionaryGlossTranslator(enable_reordering=True, fingerspell_unknown=True)
 
 
+@app.get("/", response_class=HTMLResponse)
+def root_dashboard():
+    """Interactive web dashboard and quick translation tester."""
+    return """<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SLSL Avatar Engine — Quick Tester</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #f8fafc; margin: 0; padding: 30px; display: flex; justify-content: center; }
+    .card { background: #1e293b; border-radius: 12px; padding: 28px; max-width: 680px; width: 100%; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+    h1 { margin-top: 0; font-size: 22px; display: flex; align-items: center; gap: 10px; }
+    .status { background: #166534; color: #86efac; padding: 4px 10px; border-radius: 20px; font-size: 13px; font-weight: normal; }
+    p { color: #94a3b8; font-size: 14px; line-height: 1.5; }
+    input[type="text"] { width: 100%; padding: 12px 14px; border-radius: 8px; border: 1px solid #334155; background: #0f172a; color: #fff; font-size: 15px; box-sizing: border-box; margin-bottom: 12px; }
+    button { background: #3b82f6; color: white; border: none; padding: 10px 18px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+    button:hover { background: #2563eb; }
+    .badge { display: inline-block; background: #3b82f6; color: white; font-weight: bold; padding: 6px 12px; border-radius: 6px; margin: 4px; font-family: monospace; font-size: 15px; }
+    .badge-fs { background: #d97706; }
+    #result-box { margin-top: 20px; padding: 16px; border-radius: 8px; background: #0f172a; border: 1px solid #334155; display: none; }
+    .links { margin-top: 24px; padding-top: 18px; border-top: 1px solid #334155; font-size: 13px; display: flex; gap: 16px; }
+    .links a { color: #60a5fa; text-decoration: none; }
+    .links a:hover { text-decoration: underline; }
+    .samples { margin-top: 12px; font-size: 13px; color: #64748b; }
+    .sample-btn { background: none; border: 1px solid #334155; color: #94a3b8; padding: 4px 8px; border-radius: 4px; font-size: 12px; cursor: pointer; margin: 2px; }
+    .sample-btn:hover { background: #334155; color: #fff; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>SLSL Avatar Engine <span class="status">🟢 Backend Online</span></h1>
+    <p>Test the <b>Day 1 Text-to-Gloss engine</b> directly in your browser or connect it to Unity.</p>
+
+    <input type="text" id="sentence" value="I am going to the store" placeholder="Type an English sentence...">
+    <div>
+      <button onclick="translateText()">Translate to Sign Glosses</button>
+    </div>
+
+    <div class="samples">
+      Try samples:
+      <button class="sample-btn" onclick="setSample('I am going to the store')">"I am going to the store"</button>
+      <button class="sample-btn" onclick="setSample('Hello, how are you?')">"Hello, how are you?"</button>
+      <button class="sample-btn" onclick="setSample('I went to school yesterday')">"I went to school yesterday"</button>
+      <button class="sample-btn" onclick="setSample('What is your name?')">"What is your name?"</button>
+    </div>
+
+    <div id="result-box">
+      <div style="font-size: 13px; color: #94a3b8; margin-bottom: 6px;">Output Gloss Sequence:</div>
+      <div id="glosses-container"></div>
+      <div id="meta-container" style="margin-top: 10px; font-size: 12px; color: #64748b;"></div>
+    </div>
+
+    <div class="links">
+      <a href="/docs" target="_blank">📖 Swagger API Docs</a>
+      <a href="/health" target="_blank">🩺 Health Check</a>
+      <a href="/api/v1/vocabulary" target="_blank">📚 Vocabulary List</a>
+      <a href="/api/v1/sample-sentences" target="_blank">🧪 Sample Sentences</a>
+    </div>
+  </div>
+
+  <script>
+    async function translateText() {
+      const text = document.getElementById('sentence').value;
+      if (!text.trim()) return;
+      const res = await fetch('/api/v1/translate', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({text: text, enable_reordering: true, fingerspell_unknown: true})
+      });
+      const data = await res.json();
+      const container = document.getElementById('glosses-container');
+      const meta = document.getElementById('meta-container');
+      container.innerHTML = '';
+
+      data.glosses.forEach(g => {
+        const span = document.createElement('span');
+        span.className = g.startsWith('#') ? 'badge badge-fs' : 'badge';
+        span.textContent = g;
+        container.appendChild(span);
+      });
+
+      meta.innerHTML = `Original: "${data.original_text}" | Total Glosses: ${data.glosses.length} ${data.reordered ? ' | <i>(Grammar reordered)</i>' : ''}`;
+      document.getElementById('result-box').style.display = 'block';
+    }
+    function setSample(str) {
+      document.getElementById('sentence').value = str;
+      translateText();
+    }
+    translateText();
+  </script>
+</body>
+</html>"""
+
+
 class TranslateRequest(BaseModel):
     text: str = Field(
         ...,
@@ -39,11 +134,11 @@ class TranslateRequest(BaseModel):
     )
     fingerspell_unknown: Optional[bool] = Field(
         default=True,
-        description="Whether out-of-vocabulary words should be fingerspelled"
+        description="Whether out-of-vocabulary words should be fingerspelled",
     )
     enable_reordering: Optional[bool] = Field(
         default=True,
-        description="Whether to apply Sign Language grammar reordering rules"
+        description="Whether to apply Sign Language grammar reordering rules",
     )
 
 

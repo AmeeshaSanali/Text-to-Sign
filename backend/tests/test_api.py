@@ -11,6 +11,12 @@ except ImportError:
 client = TestClient(app)
 
 
+def test_root_dashboard():
+    response = client.get("/")
+    assert response.status_code == 200
+    assert "SLSL Avatar Engine" in response.text
+
+
 def test_health_check():
     response = client.get("/health")
     assert response.status_code == 200
