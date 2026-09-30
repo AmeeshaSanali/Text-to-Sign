@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class SignAvatarUI : MonoBehaviour
 {
     [SerializeField] private SignAvatarController avatarController;
-    private string sentenceInput = "I am going to the store";
+    private string sentenceInput = "Salute and shoot the arrow";
 
     private void Awake()
     {
@@ -21,7 +21,7 @@ public class SignAvatarUI : MonoBehaviour
     // Instant zero-setup test UI rendered in the Game view
     private void OnGUI()
     {
-        GUILayout.BeginArea(new Rect(20, 20, 360, 220), GUI.skin.box);
+        GUILayout.BeginArea(new Rect(20, 20, 380, 230), GUI.skin.box);
         GUILayout.Label("<b>SLSL Avatar — Quick Start Tester</b>");
 
         GUILayout.Space(6);
@@ -38,7 +38,7 @@ public class SignAvatarUI : MonoBehaviour
         }
 
         GUILayout.Space(4);
-        if (GUILayout.Button("Play Hardcoded Test ['I', 'GO', 'STORE']"))
+        if (GUILayout.Button("Play Hardcoded Test ['Salute', 'Shooting_Arrow']"))
         {
             if (avatarController != null)
             {
@@ -47,12 +47,10 @@ public class SignAvatarUI : MonoBehaviour
         }
 
         GUILayout.Space(8);
-        GUILayout.Label("Quick Single Signs:");
+        GUILayout.Label("Single Sign Triggers:");
         GUILayout.BeginHorizontal();
-        if (GUILayout.Button("I")) avatarController.PlaySign("I");
-        if (GUILayout.Button("GO")) avatarController.PlaySign("GO");
-        if (GUILayout.Button("STORE")) avatarController.PlaySign("STORE");
-        if (GUILayout.Button("Idle")) avatarController.PlaySign("Idle");
+        if (GUILayout.Button("Salute")) avatarController.PlaySign("Salute");
+        if (GUILayout.Button("Shoot Arrow")) avatarController.PlaySign("Shooting_Arrow");
         GUILayout.EndHorizontal();
 
         GUILayout.EndArea();

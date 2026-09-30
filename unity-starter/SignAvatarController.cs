@@ -19,7 +19,7 @@ public class SignAvatarController : MonoBehaviour
     [SerializeField] private float defaultClipDuration = 1.2f;
 
     [Header("Quick Start Test (Day 3 Hardcoded)")]
-    [SerializeField] private string[] testGlossSequence = new string[] { "I", "GO", "STORE" };
+    [SerializeField] private string[] testGlossSequence = new string[] { "Salute", "Shooting_Arrow" };
 
     private Coroutine activePlaybackRoutine;
 
@@ -43,7 +43,16 @@ public class SignAvatarController : MonoBehaviour
         }
 
         Debug.Log($"[SignAvatarController] Playing sign: {glossName}");
-        animator.CrossFadeInFixedTime(glossName, transitionDuration);
+        // Try playing directly or with space/underscore normalized
+        try
+        {
+            animator.CrossFadeInFixedTime(glossName, transitionDuration);
+        }
+        catch (Exception)
+        {
+            string altName = glossName.Contains("_") ? glossName.Replace("_", " ") : glossName.Replace(" ", "_");
+            animator.CrossFadeInFixedTime(altName, transitionDuration);
+        }
     }
 
     /// <summary>

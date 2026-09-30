@@ -85,10 +85,10 @@ def root_dashboard():
     </div>
 
     <div class="links">
-      <a href="/docs" target="_blank">📖 Swagger API Docs</a>
-      <a href="/health" target="_blank">🩺 Health Check</a>
-      <a href="/api/v1/vocabulary" target="_blank">📚 Vocabulary List</a>
-      <a href="/api/v1/sample-sentences" target="_blank">🧪 Sample Sentences</a>
+      <a href="/docs" target="_blank">Swagger API Docs</a>
+      <a href="/health" target="_blank">Health Check</a>
+      <a href="/api/v1/vocabulary" target="_blank">Vocabulary List</a>
+      <a href="/api/v1/sample-sentences" target="_blank">Sample Sentences</a>
     </div>
   </div>
 
