@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 
 /// <summary>
 /// SignAvatarController controls sign language animation playback on a rigged humanoid avatar.
-/// Supports both Day 2 (single animation trigger) and Day 3 (sequential sentence playback + FastAPI bridge).
+/// Supports dynamic clip length detection so long animations (like Shooting Arrow) are never cut short.
 /// </summary>
 public class SignAvatarController : MonoBehaviour
 {
@@ -15,8 +15,8 @@ public class SignAvatarController : MonoBehaviour
 
     [Header("Backend API Configuration")]
     [SerializeField] private string backendUrl = "http://127.0.0.1:8000/api/v1/translate";
-    [SerializeField] private float transitionDuration = 0.25f;
-    [SerializeField] private float defaultClipDuration = 1.6f;
+    [SerializeField] private float transitionDuration = 0.2f;
+    [SerializeField] private float pauseBetweenSigns = 0.35f;
 
     [Header("Quick Start Test (Day 3 Hardcoded)")]
     [SerializeField] private string[] testGlossSequence = new string[] { "Salute", "Shooting_Arrow" };
@@ -35,8 +35,7 @@ public class SignAvatarController : MonoBehaviour
             animator = GetComponent<Animator>();
         }
 
-        // CRITICAL: Disable Root Motion so animations (like Shooting Arrow) do not
-        // physically rotate the avatar sideways or change the camera angle!
+        // Lock root motion so animations do not walk or turn the character off-camera
         if (animator != null)
         {
             animator.applyRootMotion = false;
@@ -48,7 +47,7 @@ public class SignAvatarController : MonoBehaviour
 
     private void LateUpdate()
     {
-        // Enforce pinned transform in case an animation clip has unbaked root transforms
+        // Keep character rooted in place facing the camera
         if (activePlaybackRoutine != null && !animator.applyRootMotion)
         {
             transform.position = initialPosition;
@@ -64,7 +63,6 @@ public class SignAvatarController : MonoBehaviour
     {
         if (animator == null || string.IsNullOrWhiteSpace(name)) return null;
 
-        // Strip fingerspelling hash if present (e.g. "#AND" -> "AND")
         string clean = name.TrimStart('#').Trim();
 
         List<string> candidates = new List<string>
@@ -79,7 +77,7 @@ public class SignAvatarController : MonoBehaviour
             clean.ToLower().Replace(" ", "_"),
         };
 
-        // Semantic aliases for our Mixamo clips
+        // Semantic aliases for our clips
         if (clean.Equals("SHOOT", StringComparison.OrdinalIgnoreCase) || 
             clean.Equals("ARROW", StringComparison.OrdinalIgnoreCase) ||
             clean.Equals("SHOOTING", StringComparison.OrdinalIgnoreCase) ||
@@ -99,7 +97,6 @@ public class SignAvatarController : MonoBehaviour
             candidates.Add("SALUTE");
         }
 
-        // Check if any candidate exists in the Animator's Base Layer (Layer 0)
         foreach (string candidate in candidates)
         {
             int hash = Animator.StringToHash(candidate);
@@ -113,8 +110,7 @@ public class SignAvatarController : MonoBehaviour
     }
 
     /// <summary>
-    /// Day 2 Deliverable: Play a single sign animation clip by gloss name with cross-fading.
-    /// Returns true if played, false if state wasn't found.
+    /// Play a single sign animation clip by gloss name with cross-fading.
     /// </summary>
     public bool PlaySign(string glossName)
     {
@@ -138,6 +134,64 @@ public class SignAvatarController : MonoBehaviour
     }
 
     /// <summary>
+    /// Plays an animation state and dynamically waits until the full animation finishes.
+    /// Solves the issue of longer animations (like Shooting Arrow) getting cut off early.
+    /// </summary>
+    private IEnumerator PlaySignAndWait(string glossName)
+    {
+        string matchedState = FindMatchingState(glossName);
+        if (matchedState == null)
+        {
+            Debug.LogWarning($"[SignAvatarController] State for '{glossName}' not found in Animator. Skipping.");
+            yield break;
+        }
+
+        currentStatus = $"Playing: {matchedState}";
+        Debug.Log($"[SignAvatarController] Starting sign '{matchedState}'...");
+
+        animator.CrossFadeInFixedTime(matchedState, transitionDuration);
+
+        // Wait for crossfade transition to start entering the state
+        yield return new WaitForSeconds(transitionDuration);
+
+        // Detect actual clip duration from the Animator state info
+        float estimatedDuration = 2.0f;
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+        if (stateInfo.length > 0)
+        {
+            estimatedDuration = stateInfo.length;
+        }
+
+        Debug.Log($"[SignAvatarController] '{matchedState}' duration is ~{estimatedDuration:F2}s. Waiting for full completion...");
+
+        // Wait until the animation has completely finished (normalizedTime >= 0.95f)
+        float elapsed = 0f;
+        float timeout = estimatedDuration + 1.0f; // safety timeout
+
+        while (elapsed < timeout)
+        {
+            elapsed += Time.deltaTime;
+            AnimatorStateInfo currentInfo = animator.GetCurrentAnimatorStateInfo(0);
+
+            // Once the clip has played ~95% of its length, transition to next
+            if (currentInfo.IsName(matchedState) && currentInfo.normalizedTime >= 0.95f)
+            {
+                break;
+            }
+
+            yield return null;
+        }
+
+        Debug.Log($"[SignAvatarController] Completed sign '{matchedState}'.");
+
+        // Natural pause between individual signs
+        if (pauseBetweenSigns > 0)
+        {
+            yield return new WaitForSeconds(pauseBetweenSigns);
+        }
+    }
+
+    /// <summary>
     /// Day 3 Deliverable: Play the hardcoded test sequence of animations one after another.
     /// </summary>
     [ContextMenu("Play Hardcoded Test Sequence")]
@@ -147,7 +201,7 @@ public class SignAvatarController : MonoBehaviour
     }
 
     /// <summary>
-    /// Play a sequence of gloss animation names sequentially.
+    /// Play a sequence of gloss animation names sequentially, waiting for each to finish completely.
     /// </summary>
     public void PlaySequence(IEnumerable<string> glosses)
     {
@@ -163,15 +217,11 @@ public class SignAvatarController : MonoBehaviour
         currentStatus = "Starting sequence...";
         foreach (string gloss in glosses)
         {
-            bool played = PlaySign(gloss);
-            if (played)
-            {
-                yield return new WaitForSeconds(defaultClipDuration);
-            }
+            yield return StartCoroutine(PlaySignAndWait(gloss));
         }
 
-        // Return to idle/starting pose after sentence finishes so avatar doesn't stay frozen
-        string idleState = FindMatchingState("Idle") ?? FindMatchingState("Salute");
+        // Return to Idle state ONLY if an Idle state was explicitly created
+        string idleState = FindMatchingState("Idle");
         if (idleState != null)
         {
             animator.CrossFadeInFixedTime(idleState, transitionDuration);
