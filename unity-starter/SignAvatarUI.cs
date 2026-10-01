@@ -1,9 +1,8 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 /// <summary>
-/// Simple UI helper that connects a Legacy/TextMeshPro InputField and Button to SignAvatarController.
-/// Also provides an immediate OnGUI overlay if Canvas UI is not yet set up!
+/// Simple UI helper that renders an instant OnGUI overlay in the Unity Game view.
+/// Displays live translation status, single sign triggers, and API execution.
 /// </summary>
 public class SignAvatarUI : MonoBehaviour
 {
@@ -18,11 +17,14 @@ public class SignAvatarUI : MonoBehaviour
         }
     }
 
-    // Instant zero-setup test UI rendered in the Game view
     private void OnGUI()
     {
-        GUILayout.BeginArea(new Rect(20, 20, 380, 230), GUI.skin.box);
+        GUILayout.BeginArea(new Rect(20, 20, 400, 260), GUI.skin.box);
         GUILayout.Label("<b>SLSL Avatar — Quick Start Tester</b>");
+
+        // Status display
+        string status = avatarController != null ? avatarController.currentStatus : "Ready";
+        GUILayout.Label($"<color=cyan>Status: {status}</color>");
 
         GUILayout.Space(6);
         GUILayout.Label("English Sentence:");

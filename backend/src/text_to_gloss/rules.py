@@ -2,12 +2,13 @@
 
 from typing import Dict, List, Set
 
-# Words omitted in standard sign language glossing (articles, copulas, grammatical particles)
+# Words omitted in standard sign language glossing (articles, copulas, grammatical particles, conjunctions)
 STOPWORDS_OMIT: Set[str] = {
     "a", "an", "the",
     "am", "is", "are", "was", "were", "be", "been", "being",
     "to", "of", "for", "with", "by", "at", "from", "into", "onto",
     "do", "does", "did",  # auxiliary do (unless emphatic/action)
+    "and", "or", "but",  # conjunctions omitted in sign glosses
 }
 
 # Multi-word phrases mapped to single or combined sign glosses
@@ -29,6 +30,14 @@ PHRASE_MAPPINGS: Dict[str, List[str]] = {
     "don't know": ["DONT-KNOW"],
     "dont want": ["DONT-WANT"],
     "don't want": ["DONT-WANT"],
+    "shoot arrow": ["SHOOTING_ARROW"],
+    "shoot the arrow": ["SHOOTING_ARROW"],
+    "shoot an arrow": ["SHOOTING_ARROW"],
+    "shooting arrow": ["SHOOTING_ARROW"],
+    "shooting an arrow": ["SHOOTING_ARROW"],
+    "salute and shoot": ["SALUTE", "SHOOTING_ARROW"],
+    "salute and shoot arrow": ["SALUTE", "SHOOTING_ARROW"],
+    "salute and shoot the arrow": ["SALUTE", "SHOOTING_ARROW"],
 }
 
 # Core dictionary mapping word stems/inflections to uppercase gloss tokens

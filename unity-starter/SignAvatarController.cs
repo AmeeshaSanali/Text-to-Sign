@@ -16,12 +16,17 @@ public class SignAvatarController : MonoBehaviour
     [Header("Backend API Configuration")]
     [SerializeField] private string backendUrl = "http://127.0.0.1:8000/api/v1/translate";
     [SerializeField] private float transitionDuration = 0.25f;
-    [SerializeField] private float defaultClipDuration = 1.2f;
+    [SerializeField] private float defaultClipDuration = 1.6f;
 
     [Header("Quick Start Test (Day 3 Hardcoded)")]
     [SerializeField] private string[] testGlossSequence = new string[] { "Salute", "Shooting_Arrow" };
 
+    [Header("Live Status")]
+    public string currentStatus = "Ready";
+
     private Coroutine activePlaybackRoutine;
+    private Vector3 initialPosition;
+    private Quaternion initialRotation;
 
     private void Awake()
     {
@@ -29,30 +34,107 @@ public class SignAvatarController : MonoBehaviour
         {
             animator = GetComponent<Animator>();
         }
+
+        // CRITICAL: Disable Root Motion so animations (like Shooting Arrow) do not
+        // physically rotate the avatar sideways or change the camera angle!
+        if (animator != null)
+        {
+            animator.applyRootMotion = false;
+        }
+
+        initialPosition = transform.position;
+        initialRotation = transform.rotation;
+    }
+
+    private void LateUpdate()
+    {
+        // Enforce pinned transform in case an animation clip has unbaked root transforms
+        if (activePlaybackRoutine != null && !animator.applyRootMotion)
+        {
+            transform.position = initialPosition;
+            transform.rotation = initialRotation;
+        }
+    }
+
+    /// <summary>
+    /// Searches for a matching animation state in layer 0 across casing conventions and common aliases.
+    /// Returns the exact state name if found, or null otherwise.
+    /// </summary>
+    public string FindMatchingState(string name)
+    {
+        if (animator == null || string.IsNullOrWhiteSpace(name)) return null;
+
+        // Strip fingerspelling hash if present (e.g. "#AND" -> "AND")
+        string clean = name.TrimStart('#').Trim();
+
+        List<string> candidates = new List<string>
+        {
+            clean,
+            clean.ToUpper(),
+            clean.ToLower(),
+            clean.Length > 1 ? char.ToUpper(clean[0]) + clean.Substring(1).ToLower() : clean.ToUpper(),
+            clean.Replace("_", " "),
+            clean.Replace(" ", "_"),
+            clean.ToUpper().Replace(" ", "_"),
+            clean.ToLower().Replace(" ", "_"),
+        };
+
+        // Semantic aliases for our Mixamo clips
+        if (clean.Equals("SHOOT", StringComparison.OrdinalIgnoreCase) || 
+            clean.Equals("ARROW", StringComparison.OrdinalIgnoreCase) ||
+            clean.Equals("SHOOTING", StringComparison.OrdinalIgnoreCase) ||
+            clean.Equals("SHOOTING_ARROW", StringComparison.OrdinalIgnoreCase) ||
+            clean.Equals("SHOOTING ARROW", StringComparison.OrdinalIgnoreCase))
+        {
+            candidates.Add("Shooting_Arrow");
+            candidates.Add("Shooting Arrow");
+            candidates.Add("shooting_arrow");
+            candidates.Add("SHOOTING_ARROW");
+        }
+
+        if (clean.Equals("SALUTE", StringComparison.OrdinalIgnoreCase))
+        {
+            candidates.Add("Salute");
+            candidates.Add("salute");
+            candidates.Add("SALUTE");
+        }
+
+        // Check if any candidate exists in the Animator's Base Layer (Layer 0)
+        foreach (string candidate in candidates)
+        {
+            int hash = Animator.StringToHash(candidate);
+            if (animator.HasState(0, hash))
+            {
+                return candidate;
+            }
+        }
+
+        return null;
     }
 
     /// <summary>
     /// Day 2 Deliverable: Play a single sign animation clip by gloss name with cross-fading.
+    /// Returns true if played, false if state wasn't found.
     /// </summary>
-    public void PlaySign(string glossName)
+    public bool PlaySign(string glossName)
     {
         if (animator == null)
         {
             Debug.LogError("[SignAvatarController] Animator component missing!");
-            return;
+            return false;
         }
 
-        Debug.Log($"[SignAvatarController] Playing sign: {glossName}");
-        // Try playing directly or with space/underscore normalized
-        try
+        string matchedState = FindMatchingState(glossName);
+        if (matchedState != null)
         {
-            animator.CrossFadeInFixedTime(glossName, transitionDuration);
+            currentStatus = $"Playing: {matchedState}";
+            Debug.Log($"[SignAvatarController] Playing state: '{matchedState}' (from gloss: '{glossName}')");
+            animator.CrossFadeInFixedTime(matchedState, transitionDuration);
+            return true;
         }
-        catch (Exception)
-        {
-            string altName = glossName.Contains("_") ? glossName.Replace("_", " ") : glossName.Replace(" ", "_");
-            animator.CrossFadeInFixedTime(altName, transitionDuration);
-        }
+
+        Debug.LogWarning($"[SignAvatarController] Animation state for '{glossName}' not found in Animator. Make sure you added a state named '{glossName}' in AvatarController!");
+        return false;
     }
 
     /// <summary>
@@ -78,14 +160,26 @@ public class SignAvatarController : MonoBehaviour
 
     private IEnumerator PlaySequenceCoroutine(IEnumerable<string> glosses)
     {
+        currentStatus = "Starting sequence...";
         foreach (string gloss in glosses)
         {
-            PlaySign(gloss);
-            yield return new WaitForSeconds(defaultClipDuration);
+            bool played = PlaySign(gloss);
+            if (played)
+            {
+                yield return new WaitForSeconds(defaultClipDuration);
+            }
         }
 
-        // Return to idle state if configured in animator
-        PlaySign("Idle");
+        // Return to idle/starting pose after sentence finishes so avatar doesn't stay frozen
+        string idleState = FindMatchingState("Idle") ?? FindMatchingState("Salute");
+        if (idleState != null)
+        {
+            animator.CrossFadeInFixedTime(idleState, transitionDuration);
+        }
+
+        transform.position = initialPosition;
+        transform.rotation = initialRotation;
+        currentStatus = "Sequence finished (Ready)";
         activePlaybackRoutine = null;
     }
 
@@ -99,6 +193,7 @@ public class SignAvatarController : MonoBehaviour
 
     private IEnumerator SendTranslationRequest(string sentence)
     {
+        currentStatus = "Connecting to Python Backend...";
         string jsonPayload = $"{{\"text\": \"{EscapeJson(sentence)}\", \"enable_reordering\": true, \"fingerspell_unknown\": true}}";
 
         using (UnityWebRequest request = new UnityWebRequest(backendUrl, "POST"))
@@ -112,6 +207,7 @@ public class SignAvatarController : MonoBehaviour
 
             if (request.result != UnityWebRequest.Result.Success)
             {
+                currentStatus = "API Error (Check backend server)";
                 Debug.LogError($"[SignAvatarController] Translation API error: {request.error}\nResponse: {request.downloadHandler.text}");
             }
             else
@@ -122,7 +218,12 @@ public class SignAvatarController : MonoBehaviour
                 BackendResponse parsed = JsonUtility.FromJson<BackendResponse>(jsonResponse);
                 if (parsed != null && parsed.glosses != null && parsed.glosses.Length > 0)
                 {
+                    currentStatus = $"Translated: {string.Join(" → ", parsed.glosses)}";
                     PlaySequence(parsed.glosses);
+                }
+                else
+                {
+                    currentStatus = "No signs returned";
                 }
             }
         }
