@@ -50,3 +50,42 @@ def test_sample_sentences_endpoint():
     assert response.status_code == 200
     data = response.json()
     assert len(data["samples"]) > 0
+
+
+def test_static_animations_endpoint():
+    # Verify static file serving of approved BLUE.json
+    response = client.get("/animations/slsl/BLUE.json")
+    assert response.status_code == 200
+    data = response.json()
+    assert data["gloss"] == "BLUE"
+    assert data["fps"] == 30
+    assert len(data["frames"]) > 0
+
+
+def test_approved_animations_endpoint():
+    response = client.get("/api/v1/animations/approved")
+    assert response.status_code == 200
+    data = response.json()
+    assert data["count"] >= 10
+    assert "BLUE" in data["approved_glosses"]
+    assert "HELLO" in data["approved_glosses"]
+
+
+def test_manifest_endpoint():
+    response = client.get("/api/v1/animations/manifest")
+    assert response.status_code == 200
+    data = response.json()
+    assert data["total_signs"] == 383
+
+
+def test_translate_with_pose_metadata():
+    payload = {"text": "hello blue today"}
+    response = client.post("/api/v1/translate", json=payload)
+    assert response.status_code == 200
+    data = response.json()
+    assert data["glosses"] == ["TODAY", "HELLO", "BLUE"]
+    for cue in data["animation_sequence"]:
+        assert cue["has_pose_animation"] is True
+        assert cue["sign_status"] == "approved"
+        assert cue["animation_url"] is not None
+        assert cue["animation_url"].startswith("/animations/slsl/")

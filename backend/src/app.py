@@ -1,9 +1,9 @@
-"""FastAPI backend service for Text-to-Gloss translation and avatar animation dispatch."""
-
+from pathlib import Path
 from typing import List, Optional
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 from .text_to_gloss.translator import (
@@ -12,6 +12,7 @@ from .text_to_gloss.translator import (
     GlossToken,
 )
 from .text_to_gloss.rules import WORD_TO_GLOSS
+from .animation.library import get_animation_library
 
 app = FastAPI(
     title="SLSL Avatar Engine API",
@@ -27,6 +28,11 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Mount static animations directory for runtime JSON loading
+animations_dir = Path(__file__).resolve().parent.parent.parent / "data" / "animations"
+if animations_dir.exists():
+    app.mount("/animations", StaticFiles(directory=str(animations_dir)), name="animations")
 
 # Global translator instance
 translator = DictionaryGlossTranslator(enable_reordering=True, fingerspell_unknown=True)
@@ -148,6 +154,9 @@ class AnimationCue(BaseModel):
     animation_clip: str
     is_fingerspelled: bool
     estimated_duration_sec: float = 1.0
+    animation_url: Optional[str] = None
+    has_pose_animation: bool = False
+    sign_status: str = "no_sign"  # "approved", "clip_fallback", "no_sign"
 
 
 class TranslateResponse(BaseModel):
@@ -183,13 +192,28 @@ def translate_text(req: TranslateRequest):
         engine = translator
 
     result: TranslationResult = engine.translate(req.text)
+    anim_lib = get_animation_library()
 
     # Build animation sequence cues for Unity consumption
     animation_sequence: List[AnimationCue] = []
     for idx, tok in enumerate(result.tokens):
-        # Clip name convention: matches uppercase gloss or FS prefix
         clip_name = tok.gloss
         duration = 0.6 if tok.is_fingerspelled else 1.2
+        anim_info = anim_lib.get_animation_info(tok.gloss)
+
+        if anim_info:
+            anim_url = anim_info["url"]
+            has_pose = True
+            status = "approved"
+        elif tok.gloss in ["SALUTE", "SHOOTING_ARROW"]:
+            anim_url = None
+            has_pose = False
+            status = "clip_fallback"
+        else:
+            anim_url = None
+            has_pose = False
+            status = "no_sign"
+
         animation_sequence.append(
             AnimationCue(
                 order=idx,
@@ -197,6 +221,9 @@ def translate_text(req: TranslateRequest):
                 animation_clip=clip_name,
                 is_fingerspelled=tok.is_fingerspelled,
                 estimated_duration_sec=duration,
+                animation_url=anim_url,
+                has_pose_animation=has_pose,
+                sign_status=status,
             )
         )
 
@@ -210,6 +237,28 @@ def translate_text(req: TranslateRequest):
         animation_sequence=animation_sequence,
         method="rule_based_dictionary",
     )
+
+
+@app.get("/api/v1/animations/approved")
+def list_approved_animations():
+    """List all currently approved SLSL pose animations available for avatar playback."""
+    anim_lib = get_animation_library()
+    approved = anim_lib.list_approved_glosses()
+    return {
+        "count": len(approved),
+        "approved_glosses": approved,
+        "items": [anim_lib.get_animation_info(g) for g in approved],
+    }
+
+
+@app.get("/api/v1/animations/manifest")
+def get_manifest():
+    """Get full manifest information for all 383 dataset signs."""
+    anim_lib = get_animation_library()
+    return {
+        "total_signs": len(anim_lib._manifest),
+        "signs": anim_lib.list_all_manifest_entries(),
+    }
 
 
 @app.get("/api/v1/vocabulary")

@@ -70,7 +70,8 @@ WORD_TO_GLOSS: Dict[str, str] = {
     "hey": "HELLO",
     "goodbye": "GOODBYE",
     "bye": "GOODBYE",
-    "thanks": "THANK-YOU",
+    "thanks": "THANK_YOU",
+    "thank-you": "THANK_YOU",
     "welcome": "WELCOME",
     "please": "PLEASE",
     "sorry": "SORRY",
@@ -197,6 +198,15 @@ WORD_TO_GLOSS: Dict[str, str] = {
     "small": "SMALL",
     "hot": "HOT",
     "cold": "COLD",
+
+    # Colors
+    "blue": "BLUE",
+    "red": "RED",
+    "green": "GREEN",
+    "black": "BLACK",
+    "white": "WHITE",
+    "yellow": "YELLOW",
+    "color": "COLOR",
 }
 
 # Words that should be prioritized as fronted time markers

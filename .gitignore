@@ -54,3 +54,7 @@ htmlcov/
 *.pdb
 *.opendb
 *.VC.db
+
+# Dataset & large media
+[Dd]ataset/*
+/Dataset/*
