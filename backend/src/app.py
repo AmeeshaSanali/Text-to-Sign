@@ -292,7 +292,16 @@ def get_sample_sentences():
 # 2D Pose Coordinate Animation & Dataset Endpoints
 # =====================================================================
 
-dataset_csv_root = Path(__file__).resolve().parent.parent.parent / "Dataset" / "Dataset - MP - CSV"
+_project_root = Path(__file__).resolve().parent.parent.parent
+_env_dataset = os.getenv("DATASET_CSV_ROOT")
+if _env_dataset and Path(_env_dataset).exists():
+    dataset_csv_root = Path(_env_dataset)
+elif (_project_root / "Dataset - MP - CSV").exists():
+    dataset_csv_root = _project_root / "Dataset - MP - CSV"
+elif (_project_root / "Dataset" / "Dataset - MP - CSV").exists():
+    dataset_csv_root = _project_root / "Dataset" / "Dataset - MP - CSV"
+else:
+    dataset_csv_root = _project_root / "Dataset - MP - CSV"
 visualizer_html_path = Path(__file__).resolve().parent / "static" / "visualizer.html"
 
 
