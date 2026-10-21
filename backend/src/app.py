@@ -4,7 +4,7 @@ import csv
 from pathlib import Path
 from typing import List, Optional, Any, Dict
 from dotenv import load_dotenv
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, UploadFile, File, Form
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
@@ -642,6 +642,83 @@ def get_benchmark_ablation(live_llm: bool = Query(default=False, description="Wh
     evaluator = AcademicBenchmarkEvaluator()
     study = evaluator.run_full_ablation_study(live_llm=live_llm)
     return study
+
+
+@app.post("/api/v1/voice/transcribe")
+async def transcribe_audio(
+    file: UploadFile = File(...),
+    language: Optional[str] = Form("auto")
+):
+    """
+    Transcribes spoken audio into Sinhala or English text using Gemini 2.5 Flash.
+    Acts as a server-side fallback for browsers without native Web Speech API support.
+    """
+    if not file:
+        raise HTTPException(status_code=400, detail="Audio file is required.")
+
+    audio_bytes = await file.read()
+    if not audio_bytes or len(audio_bytes) < 10:
+        raise HTTPException(status_code=400, detail="Audio file is empty or corrupted.")
+
+    api_key = os.getenv("GEMINI_API_KEY")
+    if not api_key:
+        raise HTTPException(
+            status_code=503,
+            detail="Gemini API key is not configured. Please set GEMINI_API_KEY."
+        )
+
+    try:
+        from google import genai
+        from google.genai import types
+
+        client = genai.Client(api_key=api_key)
+
+        mime_type = file.content_type or "audio/webm"
+        if ";" in mime_type:
+            mime_type = mime_type.split(";")[0].strip()
+
+        lang_instruction = ""
+        if language == "si":
+            lang_instruction = "The audio is spoken in Sinhala. Transcribe it into Sinhala script (සිංහල)."
+        elif language == "en":
+            lang_instruction = "The audio is spoken in English. Transcribe it into English text."
+        else:
+            lang_instruction = "Detect whether the audio is spoken in Sinhala or English and transcribe verbatim into that language."
+
+        prompt = (
+            f"{lang_instruction}\n"
+            "CRITICAL: Output ONLY the exact transcribed words with no commentary, introductory text, markdown code blocks, or quotation marks."
+        )
+
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=[
+                types.Part.from_bytes(data=audio_bytes, mime_type=mime_type),
+                prompt
+            ],
+            config=types.GenerateContentConfig(
+                temperature=0.1,
+            )
+        )
+
+        transcript = (response.text or "").strip()
+        transcript = transcript.strip('`"\'').strip()
+
+        detected_lang = language if language in ("si", "en") else (
+            "si" if any("\u0D80" <= c <= "\u0DFF" for c in transcript) else "en"
+        )
+
+        return {
+            "transcript": transcript,
+            "detected_language": detected_lang,
+            "audio_size_bytes": len(audio_bytes),
+            "mime_type": mime_type
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Voice transcription failed: {str(e)}")
+
 
 
 
