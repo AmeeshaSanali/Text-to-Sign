@@ -158,6 +158,7 @@ WORD_TO_GLOSS: Dict[str, str] = {
     "car": "CAR",
     "teacher": "TEACHER",
     "student": "STUDENT",
+    "doctor": "DOCTOR",
     "friend": "FRIEND",
     "family": "FAMILY",
     "father": "FATHER",

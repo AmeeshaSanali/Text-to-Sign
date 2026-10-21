@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SLSL Avatar Engine — 2D Pose Coordinate Animation Visualizer</title>
+  <style>
+    :root {
+      --bg-main: #0b0f19;
+      --bg-card: #151e32;
+      --bg-panel: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --color-head: #00E5FF;
+      --color-body: #00E676;
+      --color-hands: #FF3366;
+      --accent: #3b82f6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg-main);
+      color: var(--text);
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    header {
+      width: 100%;
+      max-width: 1160px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    h1 {
+      margin: 0;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .badge {
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .badge-head { background: rgba(0, 229, 255, 0.15); color: var(--color-head); border: 1px solid var(--color-head); }
+    .badge-body { background: rgba(0, 230, 118, 0.15); color: var(--color-body); border: 1px solid var(--color-body); }
+    .badge-hands { background: rgba(255, 51, 102, 0.15); color: var(--color-hands); border: 1px solid var(--color-hands); }
+
+    .sentence-section {
+      width: 100%;
+      max-width: 1160px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    .sentence-input-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .sentence-input-row input[type="text"] {
+      flex: 1;
+      padding: 12px 14px;
+      font-size: 15px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg-main);
+      color: #fff;
+    }
+    .sentence-input-row input[type="text"]:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    .btn-translate {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0 20px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.15s;
+    }
+    .btn-translate:hover { background: #2563eb; }
+
+    .btn-voice {
+      background: #1e293b;
+      color: #f1f5f9;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 0 16px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .btn-voice:hover {
+      background: #334155;
+      border-color: #475569;
+    }
+    .btn-voice.listening {
+      background: #831843;
+      border-color: #f43f5e;
+      color: #ffe4e6;
+      box-shadow: 0 0 12px rgba(244, 63, 94, 0.4);
+    }
+    .voice-indicator-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #94a3b8;
+      display: inline-block;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-voice.listening .voice-indicator-dot {
+      background: #f43f5e;
+      animation: pulse-dot 1.2s infinite;
+    }
+    @keyframes pulse-dot {
+      0% { transform: scale(0.9); opacity: 0.7; }
+      50% { transform: scale(1.3); opacity: 1; }
+      100% { transform: scale(0.9); opacity: 0.7; }
+    }
+    .voice-controls-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+      padding-top: 8px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .voice-select {
+      background: var(--bg-main);
+      color: #f1f5f9;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 5px 10px;
+      font-size: 12px;
+      outline: none;
+    }
+    .voice-select:focus {
+      border-color: var(--accent);
+    }
+
+    .sample-presets {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .preset-btn {
+      background: none;
+      border: 1px solid var(--border);
+      color: #94a3b8;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .preset-btn:hover {
+      background: var(--bg-panel);
+      color: #fff;
+      border-color: #64748b;
+    }
+
+    .sequence-banner {
+      margin-top: 14px;
+      padding: 12px 16px;
+      border-radius: 8px;
+      background: var(--bg-main);
+      border: 1px solid var(--border);
+      display: none;
+    }
+    .sequence-chips {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+    .chip {
+      background: var(--bg-panel);
+      border: 1px solid #475569;
+      color: #f1f5f9;
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 13px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.15s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .chip:hover { border-color: #38bdf8; }
+    .chip.active {
+      background: #0284c7;
+      border-color: #38bdf8;
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+    }
+    .chip.compound { border-left: 3px solid #f59e0b; }
+    .chip.semantic { border-left: 3px solid #10b981; }
+    .chip.fs { border-left: 3px solid #ec4899; }
+    .chip.no-sign { opacity: 0.5; border-left: 3px solid #ef4444; }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: 580px 1fr;
+      gap: 20px;
+      width: 100%;
+      max-width: 1160px;
+    }
+    @media (max-width: 980px) {
+      .main-grid { grid-template-columns: 1fr; }
+    }
+
+    .canvas-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+    .active-sign-banner {
+      width: 100%;
+      background: #020617;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px 12px;
+      margin-bottom: 10px;
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    canvas {
+      background: #020617;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: crosshair;
+      width: 540px;
+      height: 540px;
+    }
+
+    /* Controls */
+    .controls-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+    }
+    .card h2 {
+      margin: 0 0 12px 0;
+      font-size: 15px;
+      color: #cbd5e1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .form-row {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    label { font-size: 13px; color: var(--text-muted); font-weight: 500; }
+    select {
+      background: var(--bg-main);
+      color: #fff;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px 10px;
+      font-size: 13px;
+      width: 100%;
+    }
+    select:focus { outline: none; border-color: var(--accent); }
+
+    .playback-bar {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+      width: 100%;
+    }
+    .timeline {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    input[type="range"] {
+      flex: 1;
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+    .btn-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    button {
+      background: var(--bg-panel);
+      color: #fff;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    button:hover {
+      background: #334155;
+      border-color: #64748b;
+    }
+    button.btn-primary {
+      background: var(--accent);
+      border-color: #2563eb;
+    }
+    button.btn-primary:hover { background: #2563eb; }
+    button.active {
+      background: #38bdf8;
+      color: #020617;
+      border-color: #38bdf8;
+    }
+
+    .toggles-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      font-size: 13px;
+    }
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      color: #e2e8f0;
+    }
+
+    .telemetry-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: monospace;
+      font-size: 12px;
+      margin-top: 8px;
+    }
+    .telemetry-table th, .telemetry-table td {
+      padding: 6px 8px;
+      text-align: left;
+      border-bottom: 1px solid #1e293b;
+    }
+    .telemetry-table th { color: var(--text-muted); font-weight: normal; }
+    .telemetry-table td { color: #38bdf8; }
+
+    .nav-links {
+      margin-top: 16px;
+      font-size: 13px;
+      display: flex;
+      gap: 16px;
+    }
+    .nav-links a { color: #60a5fa; text-decoration: none; }
+    .nav-links a:hover { text-decoration: underline; }
+
+    /* Trajectory Analysis Section Styles */
+    .trajectory-section {
+      width: 100%;
+      max-width: 1160px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin-top: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+    }
+    .traj-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .traj-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .traj-canvas-container {
+      position: relative;
+      width: 100%;
+      background: #080c14;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: crosshair;
+    }
+    #trajectoryCanvas {
+      display: block;
+      width: 100%;
+      height: 290px;
+    }
+    .traj-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .traj-legend {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      font-size: 12px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .legend-line {
+      width: 16px;
+      height: 3px;
+      border-radius: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>
+      <h1>SLSL 2D Pose Coordinate Animation Visualizer</h1>
+      <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">
+        Type any English or Sinhala sentence below to animate sign coordinates on the 2D plane
+      </div>
+    </div>
+    <div style="display: flex; gap: 8px;">
+      <span class="badge badge-head">● Head/Face (0-10)</span>
+      <span class="badge badge-body">● Body/Limbs (11-14, 23-32)</span>
+      <span class="badge badge-hands">● Hands (15-22)</span>
+    </div>
+  </header>
+
+  <!-- Sentence Input & Translation Section -->
+  <div class="sentence-section">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <label for="sentenceInput" style="font-size: 14px; font-weight: 600; color: #f8fafc;">
+        <b>Enter English or Sinhala Sentence:</b>
+      </label>
+      <span id="translateStatus" style="font-size: 12px; color: #38bdf8;">Ready</span>
+    </div>
+
+    <div class="sentence-input-row">
+      <input type="text" id="sentenceInput" value="ආයුබෝවන්, මගේ අම්මා කනවා" placeholder="Type a sentence in English or Sinhala (සිංහල)...">
+      <button id="btnVoiceInput" class="btn-voice" type="button" title="Start voice typing">
+        <span class="voice-indicator-dot"></span>
+        <span id="voiceBtnLabel">Voice Input</span>
+      </button>
+      <button id="btnTranslateAnimate" class="btn-translate">Translate & Animate</button>
+    </div>
+
+    <div class="voice-controls-bar">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 12px; color: var(--text-muted); font-weight: 600;">Voice Language:</span>
+        <select id="voiceLangSelect" class="voice-select">
+          <option value="si-LK" selected>Sinhala (Sri Lanka - si-LK)</option>
+          <option value="en-US">English (United States - en-US)</option>
+          <option value="en-GB">English (United Kingdom - en-GB)</option>
+        </select>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+        <label style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-muted); cursor: pointer;">
+          <input type="checkbox" id="chkAutoTranslate" checked style="cursor: pointer; accent-color: var(--accent);">
+          Auto-translate on speech end
+        </label>
+        <span id="voiceStatus" style="font-size: 12px; color: #94a3b8;">Voice typing ready</span>
+      </div>
+    </div>
+
+    <div class="sample-presets">
+      <span>Sample sentences:</span>
+      <button class="preset-btn" onclick="setSample('මම ටෙලිනාට්‍යක් බලනවා')">"මම ටෙලිනාට්‍යක් බලනවා" (Teledrama)</button>
+      <button class="preset-btn" onclick="setSample('මම පොතක් කියවනවා')">"මම පොතක් කියවනවා"</button>
+      <button class="preset-btn" onclick="setSample('The physician arrived at the hospital')">"Physician arrived at hospital"</button>
+      <button class="preset-btn" onclick="setSample('Where are you going?')">"Where are you going?"</button>
+    </div>
+
+    <!-- Translation Engine Selection -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); flex-wrap: wrap; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
+        <span style="font-size: 12px; color: var(--text-muted); font-weight: 600;">Grounding Engine:</span>
+        <label style="font-size: 12px; color: #38bdf8; display: flex; align-items: center; gap: 5px; cursor: pointer; font-weight: 600;">
+          <input type="radio" name="engineOption" value="neural" checked style="accent-color: #38bdf8;" onchange="updateEngineUI()">
+          Neural Dense Latent (R^3072)
+        </label>
+        <label style="font-size: 12px; color: #a855f7; display: flex; align-items: center; gap: 5px; cursor: pointer;">
+          <input type="radio" name="engineOption" value="gemini" style="accent-color: #a855f7;" onchange="updateEngineUI()">
+          Gemini LLM
+        </label>
+        <label style="font-size: 12px; color: #94a3b8; display: flex; align-items: center; gap: 5px; cursor: pointer;">
+          <input type="radio" name="engineOption" value="rules" style="accent-color: #94a3b8;" onchange="updateEngineUI()">
+          Symbolic Rules Baseline
+        </label>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span id="engineBadge" style="font-size: 11px; color: #38bdf8; font-weight: 600;">Engine: Neural Dense Grounding</span>
+      </div>
+    </div>
+
+    <!-- Active Sign Queue Banner -->
+    <div id="sequenceBanner" class="sequence-banner">
+      <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--text-muted);">
+        <span>Translated Sign Sequence (click any gloss to jump):</span>
+        <span id="sequenceProgress">0 / 0</span>
+      </div>
+      <div id="sequenceChips" class="sequence-chips"></div>
+    </div>
+  </div>
+
+  <div class="main-grid">
+
+    <!-- Left: 2D Canvas & Scrubber -->
+    <div class="canvas-container">
+      <div class="active-sign-banner">
+        <span id="activeSignTitle" style="color: #38bdf8; font-weight: bold;">Ready</span>
+        <span id="activeSignDetails" style="color: var(--text-muted);">Idle</span>
+      </div>
+
+      <canvas id="poseCanvas" width="540" height="540"></canvas>
+
+      <div class="playback-bar">
+        <div class="timeline">
+          <input type="range" id="frameSlider" min="0" max="0" value="0">
+          <span id="frameTimeDisplay" style="font-family: monospace; font-size: 12px; color: var(--text-muted); min-width: 110px; text-align: right;">
+            Frame 0 / 0
+          </span>
+        </div>
+
+        <div class="btn-row" style="justify-content: space-between;">
+          <div style="display: flex; gap: 6px;">
+            <button id="btnPrevFrame" title="Step backward">Step Back</button>
+            <button id="btnPlayPause" class="btn-primary" style="min-width: 80px;">Play</button>
+            <button id="btnNextFrame" title="Step forward">Step Forward</button>
+          </div>
+
+          <div style="display: flex; gap: 4px; align-items: center;">
+            <span style="font-size: 12px; color: var(--text-muted); margin-right: 4px;">Speed:</span>
+            <button class="btn-speed" data-speed="0.25">0.25x</button>
+            <button class="btn-speed" data-speed="0.5">0.5x</button>
+            <button class="btn-speed active" data-speed="1.0">1x</button>
+            <button class="btn-speed" data-speed="2.0">2x</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Display Options & Live Telemetry -->
+    <div class="controls-panel">
+
+      <!-- Display Options Card -->
+      <div class="card">
+        <h2>Display Layers & Trails</h2>
+        <div class="toggles-grid">
+          <label class="checkbox-label">
+            <input type="checkbox" id="chkShowHead" checked> Head / Face (<span style="color: var(--color-head)">Cyan</span>)
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" id="chkShowBody" checked> Body / Limbs (<span style="color: var(--color-body)">Green</span>)
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" id="chkShowHands" checked> Hands (<span style="color: var(--color-hands)">Coral</span>)
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" id="chkShowBones" checked> Skeletal Bones
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" id="chkShowTrails" checked> Wrist Motion Trails
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" id="chkShowLabels"> Joint Index Labels
+          </label>
+        </div>
+      </div>
+
+      <!-- Individual Sign Explorer Dropdowns (Audit Mode) -->
+      <div class="card">
+        <h2>Individual Sign Explorer (Audit Mode)</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+          <div class="form-row">
+            <label for="categorySelect">Category:</label>
+            <select id="categorySelect"><option value="">Loading categories...</option></select>
+          </div>
+          <div class="form-row">
+            <label for="signSelect">Sign Word:</label>
+            <select id="signSelect" disabled><option value="">Select category</option></select>
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="takeSelect">Take Recording:</label>
+          <select id="takeSelect" disabled><option value="">Select sign</option></select>
+        </div>
+        <button id="btnLoadTake" style="width: 100%;" disabled>Load Sign Take</button>
+      </div>
+
+      <div class="nav-links">
+        <a href="/docs" target="_blank">API Documentation</a>
+        <a href="/api/v1/vocabulary" target="_blank">Vocabulary List</a>
+        <a href="/api/v1/animations/approved" target="_blank">Approved Signs List</a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    // MediaPipe 33 Landmark Partitioning
+    const HEAD_INDICES = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const BODY_INDICES = [11, 12, 13, 14, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32];
+    const HANDS_INDICES = [15, 16, 17, 18, 19, 20, 21, 22];
+
+    const COLOR_HEAD = '#00E5FF';
+    const COLOR_BODY = '#00E676';
+    const COLOR_HANDS = '#FF3366';
+    const COLOR_BONE_HEAD = '#00B4D8';
+    const COLOR_BONE_BODY = '#2E7D32';
+    const COLOR_BONE_HANDS = '#C2185B';
+
+    // Anatomical Skeletal Connections
+    const HEAD_CONNECTIONS = [
+      [0, 1], [1, 2], [2, 3], [3, 7],
+      [0, 4], [4, 5], [5, 6], [6, 8],
+      [9, 10]
+    ];
+    const BODY_CONNECTIONS = [
+      [11, 12],
+      [11, 13], [12, 14],
+      [11, 23], [12, 24],
+      [23, 24],
+      [23, 25], [24, 26],
+      [25, 27], [26, 28],
+      [27, 29], [28, 30],
+      [29, 31], [30, 32]
+    ];
+    const HAND_CONNECTIONS = [
+      [13, 15], [14, 16],
+      [15, 17], [16, 18],
+      [15, 19], [16, 20],
+      [15, 21], [16, 22],
+      [17, 19], [18, 20]
+    ];
+
+    // State Variables
+    let activeSequence = []; // array of { gloss, status, frames, frame_count, fps, ... }
+    let activeSignIndex = 0;
+    let currentFrame = 0;
+    let isPlaying = false;
+    let playbackSpeed = 1.0;
+    let fps = 10.0;
+    let lastTimestamp = 0;
+    let frameDurationMs = 100;
+    let animRequest = null;
+    let wristTrails = { left: [], right: [] };
+    const MAX_TRAIL_LENGTH = 16;
+
+    // DOM Elements
+    const canvas = document.getElementById('poseCanvas');
+    const ctx = canvas.getContext('2d');
+    const frameSlider = document.getElementById('frameSlider');
+    const frameTimeDisplay = document.getElementById('frameTimeDisplay');
+    const btnPlayPause = document.getElementById('btnPlayPause');
+    const btnPrevFrame = document.getElementById('btnPrevFrame');
+    const btnNextFrame = document.getElementById('btnNextFrame');
+    const sentenceInput = document.getElementById('sentenceInput');
+    const btnTranslateAnimate = document.getElementById('btnTranslateAnimate');
+    const translateStatus = document.getElementById('translateStatus');
+    const btnVoiceInput = document.getElementById('btnVoiceInput');
+    const voiceBtnLabel = document.getElementById('voiceBtnLabel');
+    const voiceLangSelect = document.getElementById('voiceLangSelect');
+    const chkAutoTranslate = document.getElementById('chkAutoTranslate');
+    const voiceStatus = document.getElementById('voiceStatus');
+    const sequenceBanner = document.getElementById('sequenceBanner');
+    const sequenceChips = document.getElementById('sequenceChips');
+    const sequenceProgress = document.getElementById('sequenceProgress');
+    const activeSignTitle = document.getElementById('activeSignTitle');
+    const activeSignDetails = document.getElementById('activeSignDetails');
+
+    // Display checkboxes
+    const chkShowHead = document.getElementById('chkShowHead');
+    const chkShowBody = document.getElementById('chkShowBody');
+    const chkShowHands = document.getElementById('chkShowHands');
+    const chkShowBones = document.getElementById('chkShowBones');
+    const chkShowTrails = document.getElementById('chkShowTrails');
+    const chkShowLabels = document.getElementById('chkShowLabels');
+
+    // Individual Take Explorer Selectors
+    const categorySelect = document.getElementById('categorySelect');
+    const signSelect = document.getElementById('signSelect');
+    const takeSelect = document.getElementById('takeSelect');
+    const btnLoadTake = document.getElementById('btnLoadTake');
+
+    // Grounding Engine DOM
+    const engineBadge = document.getElementById('engineBadge');
+    let isServerGeminiAvailable = false;
+
+    function getSelectedEngine() {
+      const checked = document.querySelector('input[name="engineOption"]:checked');
+      return checked ? checked.value : 'neural';
+    }
+
+    async function checkEngineStatus() {
+      try {
+        const res = await fetch('/api/v1/engine-status');
+        const data = await res.json();
+        isServerGeminiAvailable = !!data.gemini_available;
+      } catch (err) {
+        isServerGeminiAvailable = false;
+      }
+      updateEngineUI();
+    }
+
+    function updateEngineUI() {
+      const eng = getSelectedEngine();
+      if (eng === 'neural') {
+        engineBadge.textContent = 'Engine: Neural Dense Latent (R^3072)';
+        engineBadge.style.color = '#38bdf8';
+      } else if (eng === 'gemini') {
+        engineBadge.textContent = isServerGeminiAvailable ? 'Engine: Gemini LLM (Active)' : 'Engine: Gemini LLM (Requires Key)';
+        engineBadge.style.color = isServerGeminiAvailable ? '#a855f7' : '#ef4444';
+      } else {
+        engineBadge.textContent = 'Engine: Symbolic Rules Baseline';
+        engineBadge.style.color = '#94a3b8';
+      }
+    }
+
+    function setSample(text) {
+      sentenceInput.value = text;
+      translateAndAnimate();
+    }
+
+    // --- Voice Typing Engine (Web Speech API + Gemini Fallback) ---
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    let speechRecognizer = null;
+    let isListening = false;
+    let mediaRecorder = null;
+    let audioChunks = [];
+    let audioStream = null;
+    let audioContext = null;
+    let analyserNode = null;
+    let vadCheckInterval = null;
+
+    if (SpeechRecognition) {
+      voiceStatus.textContent = 'Voice typing ready (Native Web Speech)';
+      voiceStatus.style.color = '#94a3b8';
+    } else {
+      voiceStatus.textContent = 'Voice typing ready (Gemini audio fallback)';
+      voiceStatus.style.color = '#94a3b8';
+    }
+
+    function initWebSpeech() {
+      if (!SpeechRecognition) return null;
+      const recognizer = new SpeechRecognition();
+      recognizer.continuous = false;
+      recognizer.interimResults = true;
+      recognizer.maxAlternatives = 1;
+
+      recognizer.onstart = () => {
+        isListening = true;
+        btnVoiceInput.classList.add('listening');
+        voiceBtnLabel.textContent = 'Listening... (Click to Stop)';
+        const langLabel = voiceLangSelect.options[voiceLangSelect.selectedIndex].text.split(' ')[0];
+        voiceStatus.textContent = `Listening in ${langLabel}... Speak now.`;
+        voiceStatus.style.color = '#f43f5e';
+      };
+
+      recognizer.onresult = (event) => {
+        let interimText = '';
+        let finalText = '';
+
+        for (let i = event.resultIndex; i < event.results.length; ++i) {
+          const trans = event.results[i][0].transcript;
+          if (event.results[i].isFinal) {
+            finalText += trans;
+          } else {
+            interimText += trans;
+          }
+        }
+
+        if (finalText) {
+          sentenceInput.value = finalText.trim();
+          voiceStatus.textContent = `Recognized: "${finalText.trim()}"`;
+          voiceStatus.style.color = '#38bdf8';
+        } else if (interimText) {
+          sentenceInput.value = interimText.trim();
+          voiceStatus.textContent = `Hearing: "${interimText.trim()}..."`;
+          voiceStatus.style.color = '#fbbf24';
+        }
+      };
+
+      recognizer.onerror = (event) => {
+        console.warn('Speech recognition error:', event.error);
+        if (event.error !== 'no-speech') {
+          voiceStatus.textContent = `Voice recognition error: ${event.error}`;
+          voiceStatus.style.color = '#ef4444';
+        } else {
+          voiceStatus.textContent = 'No speech detected. Click Voice Input to try again.';
+          voiceStatus.style.color = '#94a3b8';
+        }
+        stopListening();
+      };
+
+      recognizer.onend = () => {
+        stopListening();
+        const text = sentenceInput.value.trim();
+        if (text && chkAutoTranslate.checked) {
+          voiceStatus.textContent = 'Speech complete. Translating and animating avatar...';
+          voiceStatus.style.color = '#10b981';
+          translateAndAnimate();
+        } else if (text) {
+          voiceStatus.textContent = 'Speech captured. Click Translate and Animate.';
+          voiceStatus.style.color = '#94a3b8';
+        }
+      };
+
+      return recognizer;
+    }
+
+    async function startListening() {
+      if (isListening) {
+        stopListening();
+        return;
+      }
+
+      sentenceInput.value = '';
+      const selectedLang = voiceLangSelect.value;
+
+      if (SpeechRecognition) {
+        try {
+          if (!speechRecognizer) {
+            speechRecognizer = initWebSpeech();
+          }
+          speechRecognizer.lang = selectedLang;
+          speechRecognizer.start();
+        } catch (e) {
+          console.warn('Failed to start Web Speech API, using MediaRecorder fallback:', e);
+          startMediaRecorderFallback(selectedLang);
+        }
+      } else {
+        startMediaRecorderFallback(selectedLang);
+      }
+    }
+
+    function stopListening() {
+      isListening = false;
+      btnVoiceInput.classList.remove('listening');
+      voiceBtnLabel.textContent = 'Voice Input';
+
+      if (speechRecognizer) {
+        try { speechRecognizer.stop(); } catch (e) {}
+      }
+
+      if (mediaRecorder && mediaRecorder.state === 'recording') {
+        try { mediaRecorder.stop(); } catch (e) {}
+      }
+
+      if (vadCheckInterval) {
+        clearInterval(vadCheckInterval);
+        vadCheckInterval = null;
+      }
+      if (audioContext && audioContext.state !== 'closed') {
+        try { audioContext.close(); } catch (e) {}
+        audioContext = null;
+      }
+    }
+
+    async function startMediaRecorderFallback(langCode) {
+      try {
+        audioStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        audioChunks = [];
+
+        let mimeType = 'audio/webm';
+        if (window.MediaRecorder && MediaRecorder.isTypeSupported('audio/webm;codecs=opus')) {
+          mimeType = 'audio/webm;codecs=opus';
+        } else if (window.MediaRecorder && MediaRecorder.isTypeSupported('audio/mp4')) {
+          mimeType = 'audio/mp4';
+        }
+
+        mediaRecorder = new MediaRecorder(audioStream, { mimeType });
+
+        mediaRecorder.ondataavailable = (e) => {
+          if (e.data && e.data.size > 0) {
+            audioChunks.push(e.data);
+          }
+        };
+
+        mediaRecorder.onstart = () => {
+          isListening = true;
+          btnVoiceInput.classList.add('listening');
+          voiceBtnLabel.textContent = 'Recording... (Click to Stop)';
+          const langLabel = langCode.startsWith('si') ? 'Sinhala' : 'English';
+          voiceStatus.textContent = `Recording audio (${langLabel})... Speak now.`;
+          voiceStatus.style.color = '#f43f5e';
+
+          try {
+            audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            const source = audioContext.createMediaStreamSource(audioStream);
+            analyserNode = audioContext.createAnalyser();
+            analyserNode.fftSize = 512;
+            source.connect(analyserNode);
+
+            const dataArray = new Uint8Array(analyserNode.frequencyBinCount);
+            let speechStarted = false;
+            let silenceDurationMs = 0;
+
+            vadCheckInterval = setInterval(() => {
+              if (!isListening) return;
+              analyserNode.getByteFrequencyData(dataArray);
+              let sum = 0;
+              for (let i = 0; i < dataArray.length; i++) sum += dataArray[i];
+              const average = sum / dataArray.length;
+
+              if (average > 18) {
+                speechStarted = true;
+                silenceDurationMs = 0;
+              } else if (speechStarted) {
+                silenceDurationMs += 100;
+                if (silenceDurationMs >= 1600) {
+                  stopListening();
+                }
+              }
+            }, 100);
+          } catch (vadErr) {
+            console.warn('VAD AudioContext init skipped:', vadErr);
+          }
+        };
+
+        mediaRecorder.onstop = async () => {
+          stopListening();
+          if (audioStream) {
+            audioStream.getTracks().forEach(t => t.stop());
+            audioStream = null;
+          }
+
+          if (audioChunks.length === 0) return;
+          const audioBlob = new Blob(audioChunks, { type: mimeType });
+
+          voiceStatus.textContent = 'Transcribing with Gemini 2.5 Flash...';
+          voiceStatus.style.color = '#a855f7';
+
+          try {
+            const formData = new FormData();
+            formData.append('file', audioBlob, 'speech_recording.webm');
+            formData.append('language', langCode.startsWith('si') ? 'si' : 'en');
+
+            const res = await fetch('/api/v1/voice/transcribe', {
+              method: 'POST',
+              body: formData
+            });
+
+            if (!res.ok) {
+              const err = await res.json().catch(() => ({ detail: 'Transcription failed' }));
+              throw new Error(err.detail || 'Server error');
+            }
+
+            const data = await res.json();
+            if (data.transcript) {
+              sentenceInput.value = data.transcript;
+              voiceStatus.textContent = `Transcribed: "${data.transcript}"`;
+              voiceStatus.style.color = '#38bdf8';
+
+              if (chkAutoTranslate.checked) {
+                voiceStatus.textContent = 'Speech complete. Translating and animating avatar...';
+                voiceStatus.style.color = '#10b981';
+                translateAndAnimate();
+              }
+            } else {
+              voiceStatus.textContent = 'No words recognized in audio.';
+              voiceStatus.style.color = '#94a3b8';
+            }
+          } catch (err) {
+            console.error('Transcription API error:', err);
+            voiceStatus.textContent = `Transcription failed: ${err.message}`;
+            voiceStatus.style.color = '#ef4444';
+          }
+        };
+
+        mediaRecorder.start();
+      } catch (err) {
+        console.error('Microphone error:', err);
+        voiceStatus.textContent = `Microphone access denied: ${err.message}`;
+        voiceStatus.style.color = '#ef4444';
+        stopListening();
+      }
+    }
+
+    btnVoiceInput.addEventListener('click', startListening);
+
+    // 1. Translate sentence and fetch 2D coordinates for all glosses
+    async function translateAndAnimate() {
+      const text = sentenceInput.value.trim();
+      if (!text) return;
+
+      pauseAnimation();
+      translateStatus.textContent = 'Grounding concepts & resolving 2D coordinates...';
+
+      const engineChoice = getSelectedEngine();
+
+      try {
+        const res = await fetch('/api/v1/translate-and-resolve-2d', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            text: text,
+            language: 'auto',
+            engine: engineChoice
+          })
+        });
+        if (!res.ok) throw new Error('Translation failed');
+        const data = await res.json();
+
+        activeSequence = data.sequence || [];
+        if (activeSequence.length === 0) {
+          translateStatus.textContent = 'No signs generated';
+          return;
+        }
+
+        // Render Sequence Chips
+        renderSequenceChips(data.sequence);
+        sequenceBanner.style.display = 'block';
+        let engineLabel = 'Neural Grounding';
+        if (data.method && data.method.includes('gemini')) engineLabel = 'Gemini LLM';
+        else if (data.method && data.method.includes('rules')) engineLabel = 'Rules Baseline';
+
+        const confPct = Math.round((data.mean_confidence || 0) * 100);
+        translateStatus.textContent = `Generated ${activeSequence.length} sign cues [${engineLabel} | Mean Conf: ${confPct}%] (${data.detected_language === 'si' ? 'Sinhala' : 'English'})`;
+
+        // Start playback from first available sign
+        playSequenceFromSign(0);
+      } catch (err) {
+        translateStatus.textContent = `Error: ${err.message}`;
+      }
+    }
+
+    function renderSequenceChips(seq) {
+      sequenceChips.innerHTML = '';
+      seq.forEach((item, idx) => {
+        const chip = document.createElement('div');
+        let typeClass = '';
+        if (item.match_type === 'compound') typeClass = 'compound';
+        else if (item.match_type === 'semantic_approximation') typeClass = 'semantic';
+        else if (item.is_fingerspelled) typeClass = 'fs';
+        else if (item.status !== 'available') typeClass = 'no-sign';
+
+        chip.className = `chip ${typeClass}`;
+        chip.dataset.index = idx;
+        const confPct = Math.round((item.confidence || 0) * 100);
+        const origTag = item.original_word ? `<span style="font-size: 11px; color: #94a3b8; font-weight: normal;">${item.original_word} →</span> ` : '';
+        let badgeColor = '#38bdf8';
+        let typeBadge = `${confPct}%`;
+        if (item.is_fingerspelled || item.match_type === 'fingerspelled') {
+          badgeColor = '#ec4899';
+          typeBadge = 'Spelled';
+        } else if (item.match_type === 'semantic_approximation') {
+          badgeColor = '#10b981';
+        } else if (item.match_type === 'compound') {
+          badgeColor = '#f59e0b';
+        }
+
+        chip.innerHTML = `${origTag}${item.gloss} <span style="font-size: 10px; padding: 2px 5px; border-radius: 4px; background: rgba(255,255,255,0.08); color: ${badgeColor}; font-weight: bold;">${typeBadge}</span> <span style="font-size: 10px; opacity: 0.6;">(${item.frame_count || 0}f)</span>`;
+        
+        let altTooltip = '';
+        if (item.alternatives && item.alternatives.length > 0) {
+          altTooltip = '\nAlternatives: ' + item.alternatives.map(a => `${a.gloss} (${Math.round(a.similarity * 100)}%)`).join(', ');
+        }
+        chip.title = `${item.note || ''}${altTooltip}`;
+        chip.onclick = () => playSequenceFromSign(idx);
+        sequenceChips.appendChild(chip);
+      });
+    }
+
+    function playSequenceFromSign(index) {
+      if (index < 0 || index >= activeSequence.length) return;
+      activeSignIndex = index;
+      const item = activeSequence[index];
+
+      // Update chip active states
+      document.querySelectorAll('.chip').forEach((c, i) => {
+        if (i === index) c.classList.add('active');
+        else c.classList.remove('active');
+      });
+
+      sequenceProgress.textContent = `Signing ${index + 1} of ${activeSequence.length}`;
+
+      if (item.status !== 'available' || !item.frames || item.frames.length === 0) {
+        const displayLabel = item.original_word ? `${item.original_word} (${item.gloss})` : item.gloss;
+        activeSignTitle.innerHTML = `<span style="color: #f59e0b;">Word ${index + 1}: ${displayLabel} [No Take]</span>`;
+        activeSignDetails.textContent = item.note || 'No sign gesture recording in SSL400 dataset; skipped';
+        // Auto-advance to next sign after brief pause
+        setTimeout(() => {
+          if (activeSignIndex === index && index + 1 < activeSequence.length) {
+            playSequenceFromSign(index + 1);
+          }
+        }, 800);
+        return;
+      }
+
+      fps = item.fps || 10.0;
+      frameDurationMs = 1000 / (fps * playbackSpeed);
+      currentFrame = 0;
+      wristTrails = { left: [], right: [] };
+
+      frameSlider.max = item.frame_count - 1;
+      frameSlider.value = 0;
+
+      activeSignTitle.innerHTML = `<span style="color: #00E5FF;">Signing: ${item.gloss}</span> (${index + 1} of ${activeSequence.length})`;
+      activeSignDetails.textContent = `Take: ${item.take || 'N/A'} | ${item.frame_count} frames | Type: ${item.match_type}`;
+
+      updateTimeDisplay();
+      renderFrame(0);
+      playAnimation();
+    }
+
+    // Playback loop
+    function animationLoop(timestamp) {
+      if (!isPlaying) return;
+
+      if (!lastTimestamp) lastTimestamp = timestamp;
+      const elapsed = timestamp - lastTimestamp;
+
+      if (elapsed >= frameDurationMs) {
+        lastTimestamp = timestamp;
+        const currentItem = activeSequence[activeSignIndex];
+
+        if (currentItem && currentItem.frames) {
+          currentFrame++;
+          if (currentFrame >= currentItem.frame_count) {
+            // Finished current sign! Move to next sign in sequence
+            if (activeSignIndex + 1 < activeSequence.length) {
+              playSequenceFromSign(activeSignIndex + 1);
+              return;
+            } else {
+              // Reached end of entire sentence sequence: loop back to beginning
+              currentFrame = 0;
+              playSequenceFromSign(0);
+              return;
+            }
+          }
+          frameSlider.value = currentFrame;
+          updateTimeDisplay();
+          renderFrame(currentFrame);
+        }
+      }
+
+      animRequest = requestAnimationFrame(animationLoop);
+    }
+
+    function playAnimation() {
+      isPlaying = true;
+      btnPlayPause.textContent = 'Pause';
+      btnPlayPause.classList.remove('btn-primary');
+      btnPlayPause.classList.add('active');
+      lastTimestamp = 0;
+      animRequest = requestAnimationFrame(animationLoop);
+    }
+
+    function pauseAnimation() {
+      isPlaying = false;
+      btnPlayPause.textContent = 'Play';
+      btnPlayPause.classList.remove('active');
+      btnPlayPause.classList.add('btn-primary');
+      if (animRequest) {
+        cancelAnimationFrame(animRequest);
+        animRequest = null;
+      }
+    }
+
+    function updateTimeDisplay() {
+      const item = activeSequence[activeSignIndex];
+      if (!item || !item.frame_count) {
+        frameTimeDisplay.textContent = 'Frame 0 / 0';
+        return;
+      }
+      const curTime = (currentFrame / fps).toFixed(2);
+      const totalTime = ((item.frame_count - 1) / fps).toFixed(2);
+      frameTimeDisplay.textContent = `Frame ${currentFrame + 1}/${item.frame_count} (${curTime}s/${totalTime}s)`;
+    }
+
+    // Canvas Rendering
+    function renderFrame(frameIdx) {
+      const item = activeSequence[activeSignIndex];
+      if (!item || !item.frames || !item.frames[frameIdx]) return;
+      const pts = item.frames[frameIdx]; // array of 33 landmarks [x, y, z, vis]
+      const w = 540;
+      const h = 540;
+
+      ctx.clearRect(0, 0, w, h);
+
+      // Subtle background grid
+      ctx.strokeStyle = '#0f172a';
+      ctx.lineWidth = 1;
+      for (let x = 45; x < w; x += 45) {
+        ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke();
+      }
+      for (let y = 45; y < h; y += 45) {
+        ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
+      }
+
+      // Record wrist trails
+      if (chkShowTrails.checked) {
+        const lw = pts[15];
+        const rw = pts[16];
+        if (lw) wristTrails.left.push([lw[0] * w, lw[1] * h]);
+        if (rw) wristTrails.right.push([rw[0] * w, rw[1] * h]);
+
+        if (wristTrails.left.length > MAX_TRAIL_LENGTH) wristTrails.left.shift();
+        if (wristTrails.right.length > MAX_TRAIL_LENGTH) wristTrails.right.shift();
+
+        drawTrail(wristTrails.left, '#FF80AB', true);
+        drawTrail(wristTrails.right, '#FF4081', false);
+      }
+
+      // Draw Bones
+      if (chkShowBones.checked) {
+        if (chkShowHead.checked) drawBoneGroup(pts, HEAD_CONNECTIONS, COLOR_BONE_HEAD, 2.0);
+        if (chkShowBody.checked) drawBoneGroup(pts, BODY_CONNECTIONS, COLOR_BONE_BODY, 2.8);
+        if (chkShowHands.checked) drawBoneGroup(pts, HAND_CONNECTIONS, COLOR_BONE_HANDS, 2.8);
+      }
+
+      // Draw Landmarks in 3 Distinct Colors
+      if (chkShowHead.checked) {
+        drawPoints(pts, HEAD_INDICES, COLOR_HEAD, 4.5);
+      }
+      if (chkShowBody.checked) {
+        drawPoints(pts, BODY_INDICES, COLOR_BODY, 5.5);
+      }
+      if (chkShowHands.checked) {
+        drawPoints(pts, HANDS_INDICES, COLOR_HANDS, 7.0);
+      }
+
+      // Draw Joint Labels if enabled
+      if (chkShowLabels.checked) {
+        ctx.font = '10px monospace';
+        ctx.fillStyle = '#94a3b8';
+        for (let i = 0; i < 33; i++) {
+          const pt = pts[i];
+          ctx.fillText(i, pt[0] * w + 6, pt[1] * h - 4);
+        }
+      }
+
+    }
+
+    function drawBoneGroup(pts, connections, color, lineWidth) {
+      const w = 540; const h = 540;
+      ctx.strokeStyle = color;
+      ctx.lineWidth = lineWidth;
+      ctx.lineCap = 'round';
+
+      connections.forEach(([i, j]) => {
+        const p1 = pts[i];
+        const p2 = pts[j];
+        if (!p1 || !p2) return;
+        ctx.beginPath();
+        ctx.moveTo(p1[0] * w, p1[1] * h);
+        ctx.lineTo(p2[0] * w, p2[1] * h);
+        ctx.stroke();
+      });
+    }
+
+    function drawPoints(pts, indices, color, radius) {
+      const w = 540; const h = 540;
+      indices.forEach(idx => {
+        const p = pts[idx];
+        if (!p) return;
+        const px = p[0] * w;
+        const py = p[1] * h;
+
+        ctx.fillStyle = color;
+        ctx.beginPath();
+        ctx.arc(px, py, radius, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.strokeStyle = '#FFFFFF';
+        ctx.lineWidth = 1.0;
+        ctx.stroke();
+      });
+    }
+
+    function drawTrail(trail, color, isDotted) {
+      if (trail.length < 2) return;
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 2.0;
+      if (isDotted) ctx.setLineDash([3, 4]);
+      else ctx.setLineDash([]);
+
+      for (let i = 1; i < trail.length; i++) {
+        const alpha = (i / trail.length) * 0.85;
+        ctx.globalAlpha = alpha;
+        ctx.beginPath();
+        ctx.moveTo(trail[i - 1][0], trail[i - 1][1]);
+        ctx.lineTo(trail[i][0], trail[i][1]);
+        ctx.stroke();
+      }
+      ctx.setLineDash([]);
+      ctx.globalAlpha = 1.0;
+    }
+
+    // Event Listeners
+    btnTranslateAnimate.addEventListener('click', translateAndAnimate);
+    sentenceInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') translateAndAnimate();
+    });
+
+    btnPlayPause.addEventListener('click', () => {
+      if (isPlaying) pauseAnimation();
+      else playAnimation();
+    });
+
+    btnPrevFrame.addEventListener('click', () => {
+      const item = activeSequence[activeSignIndex];
+      if (!item || !item.frame_count) return;
+      pauseAnimation();
+      currentFrame = Math.max(0, currentFrame - 1);
+      frameSlider.value = currentFrame;
+      updateTimeDisplay();
+      renderFrame(currentFrame);
+    });
+
+    btnNextFrame.addEventListener('click', () => {
+      const item = activeSequence[activeSignIndex];
+      if (!item || !item.frame_count) return;
+      pauseAnimation();
+      currentFrame = Math.min(item.frame_count - 1, currentFrame + 1);
+      frameSlider.value = currentFrame;
+      updateTimeDisplay();
+      renderFrame(currentFrame);
+    });
+
+    frameSlider.addEventListener('input', (e) => {
+      const item = activeSequence[activeSignIndex];
+      if (!item || !item.frame_count) return;
+      pauseAnimation();
+      currentFrame = parseInt(e.target.value, 10);
+      updateTimeDisplay();
+      renderFrame(currentFrame);
+    });
+
+    // Speed buttons
+    document.querySelectorAll('.btn-speed').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.btn-speed').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        playbackSpeed = parseFloat(btn.dataset.speed);
+        frameDurationMs = 1000 / (fps * playbackSpeed);
+      });
+    });
+
+    // Layer Toggle Redraws
+    [chkShowHead, chkShowBody, chkShowHands, chkShowBones, chkShowTrails, chkShowLabels].forEach(chk => {
+      chk.addEventListener('change', () => {
+        if (!isPlaying && activeSequence[activeSignIndex]) renderFrame(currentFrame);
+      });
+    });
+
+    // Spacebar shortcut
+    window.addEventListener('keydown', (e) => {
+      if (e.code === 'Space' && e.target.tagName !== 'INPUT' && e.target.tagName !== 'SELECT') {
+        e.preventDefault();
+        if (isPlaying) pauseAnimation();
+        else playAnimation();
+      } else if (e.code === 'ArrowLeft' && e.target.tagName !== 'INPUT') {
+        btnPrevFrame.click();
+      } else if (e.code === 'ArrowRight' && e.target.tagName !== 'INPUT') {
+        btnNextFrame.click();
+      }
+    });
+
+    // 2. Individual Take Explorer Initialization
+    async function initCategories() {
+      try {
+        const res = await fetch('/api/v1/dataset/categories');
+        const data = await res.json();
+        categorySelect.innerHTML = '<option value="">-- Choose Category --</option>';
+        data.categories.forEach(cat => {
+          const opt = document.createElement('option');
+          opt.value = cat;
+          opt.textContent = cat;
+          categorySelect.appendChild(opt);
+        });
+      } catch (err) {}
+    }
+
+    async function onCategoryChange() {
+      const cat = categorySelect.value;
+      if (!cat) return;
+      const res = await fetch(`/api/v1/dataset/signs?category=${encodeURIComponent(cat)}`);
+      const data = await res.json();
+      signSelect.innerHTML = '<option value="">-- Choose Sign --</option>';
+      data.signs.forEach(s => {
+        const opt = document.createElement('option');
+        opt.value = s;
+        opt.textContent = s;
+        signSelect.appendChild(opt);
+      });
+      signSelect.disabled = false;
+      takeSelect.disabled = true;
+      btnLoadTake.disabled = true;
+    }
+
+    async function onSignChange() {
+      const cat = categorySelect.value;
+      const sign = signSelect.value;
+      if (!cat || !sign) return;
+      const res = await fetch(`/api/v1/dataset/takes?category=${encodeURIComponent(cat)}&sign=${encodeURIComponent(sign)}`);
+      const data = await res.json();
+      takeSelect.innerHTML = '';
+      data.takes.forEach(t => {
+        const opt = document.createElement('option');
+        opt.value = t;
+        opt.textContent = t;
+        takeSelect.appendChild(opt);
+      });
+      takeSelect.disabled = false;
+      btnLoadTake.disabled = false;
+    }
+
+    async function loadIndividualTake() {
+      const cat = categorySelect.value;
+      const sign = signSelect.value;
+      const take = takeSelect.value;
+      if (!cat || !sign || !take) return;
+
+      const res = await fetch(`/api/v1/dataset/landmarks?category=${encodeURIComponent(cat)}&sign=${encodeURIComponent(sign)}&take=${encodeURIComponent(take)}`);
+      const data = await res.json();
+
+      activeSequence = [{
+        gloss: sign.toUpperCase(),
+        sign_label: sign,
+        category: cat,
+        take: take,
+        status: 'available',
+        match_type: 'explorer',
+        fps: data.fps || 10.0,
+        frame_count: data.frame_count,
+        frames: data.frames
+      }];
+      renderSequenceChips(activeSequence);
+      sequenceBanner.style.display = 'block';
+      playSequenceFromSign(0);
+    }
+
+    categorySelect.addEventListener('change', onCategoryChange);
+    signSelect.addEventListener('change', onSignChange);
+    btnLoadTake.addEventListener('click', loadIndividualTake);
+
+    // Initial load
+    initCategories();
+    checkEngineStatus();
+    // Auto-translate default sample
+    translateAndAnimate();
+  </script>
+</body>
+</html>
