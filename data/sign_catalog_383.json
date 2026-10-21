@@ -1,0 +1,3309 @@
+[
+  {
+    "gloss": "ADDITION",
+    "label": "Addition",
+    "category": "Numbers",
+    "take": "Addition_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: ADDITION. Category: Numbers. English words: Addition, addition."
+  },
+  {
+    "gloss": "AFTER",
+    "label": "After",
+    "category": "Preposition",
+    "take": "After_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: AFTER. Category: Preposition. English words: After, after."
+  },
+  {
+    "gloss": "AGAIN",
+    "label": "Again",
+    "category": "Adverb",
+    "take": "Again_006",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: AGAIN. Category: Adverb. English words: Again, again."
+  },
+  {
+    "gloss": "AIRPORT",
+    "label": "Airport",
+    "category": "Places",
+    "take": "Airport_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: AIRPORT. Category: Places. English words: Airport, airport."
+  },
+  {
+    "gloss": "ALLOW",
+    "label": "Allow",
+    "category": "Verbs",
+    "take": "Allow_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: ALLOW. Category: Verbs. English words: Allow, allow."
+  },
+  {
+    "gloss": "ALRIGHT",
+    "label": "Alright",
+    "category": "Greetings",
+    "take": "Alright_019",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: ALRIGHT. Category: Greetings. English words: Alright, alright."
+  },
+  {
+    "gloss": "ALSO",
+    "label": "Also",
+    "category": "Adverb",
+    "take": "Also_005",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: ALSO. Category: Adverb. English words: Also, also."
+  },
+  {
+    "gloss": "APRIL",
+    "label": "April",
+    "category": "Months",
+    "take": "April_005",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: APRIL. Category: Months. English words: April, april."
+  },
+  {
+    "gloss": "AROUND",
+    "label": "Around",
+    "category": "Preposition",
+    "take": "Around_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: AROUND. Category: Preposition. English words: Around, around."
+  },
+  {
+    "gloss": "ARTICLE",
+    "label": "Article",
+    "category": "Nouns",
+    "take": "Article_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: ARTICLE. Category: Nouns. English words: Article, article."
+  },
+  {
+    "gloss": "AUGUST",
+    "label": "August",
+    "category": "Months",
+    "take": "August_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: AUGUST. Category: Months. English words: August, august."
+  },
+  {
+    "gloss": "AUNT",
+    "label": "Aunt",
+    "category": "People",
+    "take": "Aunt_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: AUNT. Category: People. English words: Aunt, aunt."
+  },
+  {
+    "gloss": "AYUBOWAN",
+    "label": "Ayubowan",
+    "category": "Greetings",
+    "take": "Ayubowan_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: AYUBOWAN. Category: Greetings. English words: Ayubowan, ayubowan. Context: traditional Sri Lankan greeting, wishing long life, hello, respectful salutation."
+  },
+  {
+    "gloss": "BABY",
+    "label": "Baby",
+    "category": "People",
+    "take": "Baby_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: BABY. Category: People. English words: Baby, baby."
+  },
+  {
+    "gloss": "BAD",
+    "label": "Bad",
+    "category": "Adjectives",
+    "take": "Bad_003",
+    "sinhala_terms": [
+      "නරක"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: BAD. Category: Adjectives. English words: Bad, bad. Sinhala terms: නරක."
+  },
+  {
+    "gloss": "BAG",
+    "label": "Bag",
+    "category": "Nouns",
+    "take": "Bag_007",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: BAG. Category: Nouns. English words: Bag, bag."
+  },
+  {
+    "gloss": "BANK",
+    "label": "Bank",
+    "category": "Places",
+    "take": "Bank_002",
+    "sinhala_terms": [
+      "බැංකුව"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: BANK. Category: Places. English words: Bank, bank. Sinhala terms: බැංකුව."
+  },
+  {
+    "gloss": "BATHE",
+    "label": "Bathe",
+    "category": "Verbs",
+    "take": "Bathe_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: BATHE. Category: Verbs. English words: Bathe, bathe."
+  },
+  {
+    "gloss": "BEAUTIFUL",
+    "label": "Beautiful",
+    "category": "Adjectives",
+    "take": "Beautiful_030",
+    "sinhala_terms": [
+      "ලස්සන"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: BEAUTIFUL. Category: Adjectives. English words: Beautiful, beautiful. Sinhala terms: ලස්සන."
+  },
+  {
+    "gloss": "BED",
+    "label": "Bed",
+    "category": "Nouns",
+    "take": "Bed_014",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: BED. Category: Nouns. English words: Bed, bed."
+  },
+  {
+    "gloss": "BICYCLE",
+    "label": "Bicycle",
+    "category": "Vehicles",
+    "take": "Bicycle_003",
+    "sinhala_terms": [
+      "බයිසිකලය"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: BICYCLE. Category: Vehicles. English words: Bicycle, bicycle. Sinhala terms: බයිසිකලය."
+  },
+  {
+    "gloss": "BLACK",
+    "label": "Black",
+    "category": "Colors",
+    "take": "Black_004",
+    "sinhala_terms": [
+      "කළු"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: BLACK. Category: Colors. English words: Black, black. Sinhala terms: කළු."
+  },
+  {
+    "gloss": "BLUE",
+    "label": "Blue",
+    "category": "Colors",
+    "take": "Blue_001",
+    "sinhala_terms": [
+      "නිල්"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: BLUE. Category: Colors. English words: Blue, blue. Sinhala terms: නිල්."
+  },
+  {
+    "gloss": "BOAT",
+    "label": "Boat",
+    "category": "Vehicles",
+    "take": "Boat_013",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: BOAT. Category: Vehicles. English words: Boat, boat."
+  },
+  {
+    "gloss": "BOIL",
+    "label": "Boil",
+    "category": "Verbs",
+    "take": "Boil_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: BOIL. Category: Verbs. English words: Boil, boil."
+  },
+  {
+    "gloss": "BOOK",
+    "label": "Book",
+    "category": "Nouns",
+    "take": "Book_001",
+    "sinhala_terms": [
+      "පොත",
+      "පොත්"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: BOOK. Category: Nouns. English words: Book, book. Context: book, reading book, literature, publication, textbook, study material. Sinhala terms: පොත, පොත්."
+  },
+  {
+    "gloss": "BREAK",
+    "label": "Break",
+    "category": "Verbs",
+    "take": "Break_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: BREAK. Category: Verbs. English words: Break, break."
+  },
+  {
+    "gloss": "BRING",
+    "label": "Bring",
+    "category": "Verbs",
+    "take": "Bring_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: BRING. Category: Verbs. English words: Bring, bring."
+  },
+  {
+    "gloss": "BRO",
+    "label": "Bro",
+    "category": "People",
+    "take": "Bro_005",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: BRO. Category: People. English words: Bro, bro."
+  },
+  {
+    "gloss": "BROTHER_IN_LAW",
+    "label": "Brother in law",
+    "category": "People",
+    "take": "Brother in law_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: BROTHER_IN_LAW. Category: People. English words: Brother in law, brother in law."
+  },
+  {
+    "gloss": "BROWN",
+    "label": "Brown",
+    "category": "Colors",
+    "take": "Brown_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: BROWN. Category: Colors. English words: Brown, brown."
+  },
+  {
+    "gloss": "BUS",
+    "label": "Bus",
+    "category": "Vehicles",
+    "take": "Bus_002",
+    "sinhala_terms": [
+      "බස්",
+      "බස් එක"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: BUS. Category: Vehicles. English words: Bus, bus. Context: bus, public transport bus, omnibus, coach. Sinhala terms: බස්, බස් එක."
+  },
+  {
+    "gloss": "BUS_STATION",
+    "label": "Bus station",
+    "category": "Places",
+    "take": "Bus station_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: BUS_STATION. Category: Places. English words: Bus station, bus station."
+  },
+  {
+    "gloss": "BUY",
+    "label": "Buy",
+    "category": "Verbs",
+    "take": "Buy_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: BUY. Category: Verbs. English words: Buy, buy."
+  },
+  {
+    "gloss": "CAMERA",
+    "label": "Camera",
+    "category": "Nouns",
+    "take": "Camera_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: CAMERA. Category: Nouns. English words: Camera, camera."
+  },
+  {
+    "gloss": "CAN",
+    "label": "Can",
+    "category": "Adverb",
+    "take": "Can_010",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: CAN. Category: Adverb. English words: Can, can."
+  },
+  {
+    "gloss": "CANT",
+    "label": "Cant",
+    "category": "Adverb",
+    "take": "Cant_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: CANT. Category: Adverb. English words: Cant, cant."
+  },
+  {
+    "gloss": "CAR",
+    "label": "Car",
+    "category": "Vehicles",
+    "take": "Car_002",
+    "sinhala_terms": [
+      "කාරය",
+      "කාර්"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: CAR. Category: Vehicles. English words: Car, car. Context: car, automobile, motor vehicle, passenger sedan. Sinhala terms: කාරය, කාර්."
+  },
+  {
+    "gloss": "CARD",
+    "label": "Card",
+    "category": "Nouns",
+    "take": "Card_005",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: CARD. Category: Nouns. English words: Card, card."
+  },
+  {
+    "gloss": "CAREFUL",
+    "label": "Careful",
+    "category": "Adjectives",
+    "take": "Careful_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: CAREFUL. Category: Adjectives. English words: Careful, careful."
+  },
+  {
+    "gloss": "CARRY",
+    "label": "Carry",
+    "category": "Verbs",
+    "take": "Carry_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: CARRY. Category: Verbs. English words: Carry, carry."
+  },
+  {
+    "gloss": "CAT",
+    "label": "Cat",
+    "category": "Nouns",
+    "take": "Cat_011",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: CAT. Category: Nouns. English words: Cat, cat."
+  },
+  {
+    "gloss": "CEILING_FAN",
+    "label": "Ceiling fan",
+    "category": "Nouns",
+    "take": "Ceiling fan_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: CEILING_FAN. Category: Nouns. English words: Ceiling fan, ceiling fan."
+  },
+  {
+    "gloss": "CELL_PHONE",
+    "label": "Cell phone",
+    "category": "Nouns",
+    "take": "Cell phone_006",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: CELL_PHONE. Category: Nouns. English words: Cell phone, cell phone."
+  },
+  {
+    "gloss": "CHAIN",
+    "label": "Chain",
+    "category": "Nouns",
+    "take": "Chain_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: CHAIN. Category: Nouns. English words: Chain, chain."
+  },
+  {
+    "gloss": "CHANGE",
+    "label": "Change",
+    "category": "Verbs",
+    "take": "Change_010",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: CHANGE. Category: Verbs. English words: Change, change."
+  },
+  {
+    "gloss": "CHILD",
+    "label": "Child",
+    "category": "People",
+    "take": "Child_013",
+    "sinhala_terms": [
+      "ළමයා",
+      "දරුවා"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: CHILD. Category: People. English words: Child, child. Sinhala terms: ළමයා, දරුවා."
+  },
+  {
+    "gloss": "CHILDREN",
+    "label": "Children",
+    "category": "Nouns",
+    "take": "Children_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: CHILDREN. Category: Nouns. English words: Children, children."
+  },
+  {
+    "gloss": "CHOICE",
+    "label": "Choice",
+    "category": "Nouns",
+    "take": "Choice_007",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: CHOICE. Category: Nouns. English words: Choice, choice."
+  },
+  {
+    "gloss": "CHOOSE",
+    "label": "Choose",
+    "category": "Verbs",
+    "take": "Choose_007",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: CHOOSE. Category: Verbs. English words: Choose, choose."
+  },
+  {
+    "gloss": "CHURCH",
+    "label": "Church",
+    "category": "Places",
+    "take": "Church_001",
+    "sinhala_terms": [
+      "පල්ලිය"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: CHURCH. Category: Places. English words: Church, church. Sinhala terms: පල්ලිය."
+  },
+  {
+    "gloss": "CLEARLY",
+    "label": "Clearly",
+    "category": "Adverb",
+    "take": "Clearly_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: CLEARLY. Category: Adverb. English words: Clearly, clearly."
+  },
+  {
+    "gloss": "CLICK",
+    "label": "Click",
+    "category": "Verbs",
+    "take": "Click_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: CLICK. Category: Verbs. English words: Click, click."
+  },
+  {
+    "gloss": "CLOTHING",
+    "label": "Clothing",
+    "category": "Nouns",
+    "take": "Clothing_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: CLOTHING. Category: Nouns. English words: Clothing, clothing."
+  },
+  {
+    "gloss": "COLD",
+    "label": "Cold",
+    "category": "Adjectives",
+    "take": "Cold_010",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: COLD. Category: Adjectives. English words: Cold, cold."
+  },
+  {
+    "gloss": "COLOR",
+    "label": "Color",
+    "category": "Colors",
+    "take": "Color_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: COLOR. Category: Colors. English words: Color, color."
+  },
+  {
+    "gloss": "COME",
+    "label": "Come",
+    "category": "Verbs",
+    "take": "Come_030",
+    "sinhala_terms": [
+      "එන",
+      "එ"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: COME. Category: Verbs. English words: Come, come. Sinhala terms: එන, එ."
+  },
+  {
+    "gloss": "COMPUTER",
+    "label": "Computer",
+    "category": "Nouns",
+    "take": "Computer_005",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: COMPUTER. Category: Nouns. English words: Computer, computer."
+  },
+  {
+    "gloss": "CONNECT",
+    "label": "Connect",
+    "category": "Verbs",
+    "take": "Connect_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: CONNECT. Category: Verbs. English words: Connect, connect."
+  },
+  {
+    "gloss": "COOK",
+    "label": "Cook",
+    "category": "Verbs",
+    "take": "Cook_028",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: COOK. Category: Verbs. English words: Cook, cook."
+  },
+  {
+    "gloss": "COPY",
+    "label": "Copy",
+    "category": "Verbs",
+    "take": "Copy_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: COPY. Category: Verbs. English words: Copy, copy."
+  },
+  {
+    "gloss": "COUGH",
+    "label": "Cough",
+    "category": "Verbs",
+    "take": "Cough_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: COUGH. Category: Verbs. English words: Cough, cough."
+  },
+  {
+    "gloss": "COUNT",
+    "label": "Count",
+    "category": "Numbers",
+    "take": "Count_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: COUNT. Category: Numbers. English words: Count, count."
+  },
+  {
+    "gloss": "COVER",
+    "label": "Cover",
+    "category": "Verbs",
+    "take": "Cover_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: COVER. Category: Verbs. English words: Cover, cover."
+  },
+  {
+    "gloss": "COW",
+    "label": "Cow",
+    "category": "Nouns",
+    "take": "Cow_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: COW. Category: Nouns. English words: Cow, cow."
+  },
+  {
+    "gloss": "CROCODILE",
+    "label": "Crocodile",
+    "category": "Nouns",
+    "take": "Crocodile_006",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: CROCODILE. Category: Nouns. English words: Crocodile, crocodile."
+  },
+  {
+    "gloss": "CRY",
+    "label": "Cry",
+    "category": "Verbs",
+    "take": "Cry_024",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: CRY. Category: Verbs. English words: Cry, cry."
+  },
+  {
+    "gloss": "CULTURE",
+    "label": "Culture",
+    "category": "Nouns",
+    "take": "Culture_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: CULTURE. Category: Nouns. English words: Culture, culture."
+  },
+  {
+    "gloss": "CUT",
+    "label": "Cut",
+    "category": "Verbs",
+    "take": "Cut_029",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: CUT. Category: Verbs. English words: Cut, cut."
+  },
+  {
+    "gloss": "DANCE",
+    "label": "Dance",
+    "category": "Verbs",
+    "take": "Dance_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: DANCE. Category: Verbs. English words: Dance, dance."
+  },
+  {
+    "gloss": "DAUGHTER",
+    "label": "Daughter",
+    "category": "People",
+    "take": "Daughter_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: DAUGHTER. Category: People. English words: Daughter, daughter."
+  },
+  {
+    "gloss": "DAY",
+    "label": "Day",
+    "category": "Days",
+    "take": "Day_021",
+    "sinhala_terms": [
+      "දවස"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: DAY. Category: Days. English words: Day, day. Sinhala terms: දවස."
+  },
+  {
+    "gloss": "DAY_AFTER_TOMORROW",
+    "label": "Day after tomorrow",
+    "category": "Days",
+    "take": "Day after tomorrow_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: DAY_AFTER_TOMORROW. Category: Days. English words: Day after tomorrow, day after tomorrow."
+  },
+  {
+    "gloss": "DEAF",
+    "label": "Deaf",
+    "category": "Adjectives",
+    "take": "Deaf_013",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: DEAF. Category: Adjectives. English words: Deaf, deaf."
+  },
+  {
+    "gloss": "DECEMBER",
+    "label": "December",
+    "category": "Months",
+    "take": "December_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: DECEMBER. Category: Months. English words: December, december."
+  },
+  {
+    "gloss": "DEEP",
+    "label": "Deep",
+    "category": "Adjectives",
+    "take": "Deep_005",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: DEEP. Category: Adjectives. English words: Deep, deep."
+  },
+  {
+    "gloss": "DIFFERENT",
+    "label": "Different",
+    "category": "Adjectives",
+    "take": "Different_008",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: DIFFERENT. Category: Adjectives. English words: Different, different."
+  },
+  {
+    "gloss": "DIFFICULT",
+    "label": "Difficult",
+    "category": "Adjectives",
+    "take": "Difficult_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: DIFFICULT. Category: Adjectives. English words: Difficult, difficult."
+  },
+  {
+    "gloss": "DISLIKE",
+    "label": "Not like (dislike)",
+    "category": "Adverb",
+    "take": "Not like (dislike)_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: DISLIKE. Category: Adverb. English words: Not like (dislike), dislike."
+  },
+  {
+    "gloss": "DIVIDE",
+    "label": "Divide",
+    "category": "Numbers",
+    "take": "Divide_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: DIVIDE. Category: Numbers. English words: Divide, divide."
+  },
+  {
+    "gloss": "DOCTOR",
+    "label": "Doctor",
+    "category": "People",
+    "take": "Doctor_002",
+    "sinhala_terms": [
+      "වෛද්‍යවරයා",
+      "දොස්තර",
+      "physician",
+      "medic",
+      "specialist",
+      "දොස්තර",
+      "වෙද"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: DOCTOR. Category: People. English words: Doctor, doctor. Context: physician, medic, healthcare practitioner, hospital clinic doctor, medical specialist. Sinhala terms: වෛද්‍යවරයා, දොස්තර, physician, medic, specialist, වෙද."
+  },
+  {
+    "gloss": "DONE",
+    "label": "Done",
+    "category": "Verbs",
+    "take": "Done_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: DONE. Category: Verbs. English words: Done, done."
+  },
+  {
+    "gloss": "DONT",
+    "label": "Dont",
+    "category": "Adverb",
+    "take": "Dont_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: DONT. Category: Adverb. English words: Dont, dont."
+  },
+  {
+    "gloss": "DONT_KNOW",
+    "label": "Dont know",
+    "category": "Adverb",
+    "take": "Dont know_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: DONT_KNOW. Category: Adverb. English words: Dont know, dont know."
+  },
+  {
+    "gloss": "DOOR",
+    "label": "Door",
+    "category": "Nouns",
+    "take": "Door_005",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: DOOR. Category: Nouns. English words: Door, door."
+  },
+  {
+    "gloss": "DOUBLE",
+    "label": "Double",
+    "category": "Adjectives",
+    "take": "Double_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: DOUBLE. Category: Adjectives. English words: Double, double."
+  },
+  {
+    "gloss": "DRAW",
+    "label": "Draw",
+    "category": "Verbs",
+    "take": "Draw_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: DRAW. Category: Verbs. English words: Draw, draw."
+  },
+  {
+    "gloss": "DRINK",
+    "label": "Drink",
+    "category": "Verbs",
+    "take": "Drink_025",
+    "sinhala_terms": [
+      "බොන",
+      "බො"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: DRINK. Category: Verbs. English words: Drink, drink. Context: drink, beverage, consume liquid, water, tea, milk. Sinhala terms: බොන, බො."
+  },
+  {
+    "gloss": "EAT",
+    "label": "Eat",
+    "category": "Verbs",
+    "take": "Eat_021",
+    "sinhala_terms": [
+      "කන",
+      "ක",
+      "කෑම"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: EAT. Category: Verbs. English words: Eat, eat. Context: eat, consume food, dine, tasting, eating breakfast lunch dinner. Sinhala terms: කන, ක, කෑම."
+  },
+  {
+    "gloss": "EIGHT",
+    "label": "8. eight",
+    "category": "Numbers",
+    "take": "8. eight_006",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: EIGHT. Category: Numbers. English words: 8. eight, eight."
+  },
+  {
+    "gloss": "EIGHTEEN",
+    "label": "18. eighteen",
+    "category": "Numbers",
+    "take": "18. eighteen_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: EIGHTEEN. Category: Numbers. English words: 18. eighteen, eighteen."
+  },
+  {
+    "gloss": "ELDER_BRO",
+    "label": "Elder bro",
+    "category": "People",
+    "take": "Elder bro_021",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: ELDER_BRO. Category: People. English words: Elder bro, elder bro."
+  },
+  {
+    "gloss": "ELDER_SISTER",
+    "label": "Elder sister",
+    "category": "People",
+    "take": "Elder sister_021",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: ELDER_SISTER. Category: People. English words: Elder sister, elder sister."
+  },
+  {
+    "gloss": "ELEPHANT",
+    "label": "Elephant",
+    "category": "Nouns",
+    "take": "Elephant_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: ELEPHANT. Category: Nouns. English words: Elephant, elephant."
+  },
+  {
+    "gloss": "ELEVEN",
+    "label": "11. eleven",
+    "category": "Numbers",
+    "take": "11. eleven_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: ELEVEN. Category: Numbers. English words: 11. eleven, eleven."
+  },
+  {
+    "gloss": "ENTER",
+    "label": "Enter",
+    "category": "Verbs",
+    "take": "Enter_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: ENTER. Category: Verbs. English words: Enter, enter."
+  },
+  {
+    "gloss": "EQUAL",
+    "label": "Equal",
+    "category": "Numbers",
+    "take": "Equal_006",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: EQUAL. Category: Numbers. English words: Equal, equal."
+  },
+  {
+    "gloss": "ERASE",
+    "label": "Erase",
+    "category": "Verbs",
+    "take": "Erase_005",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: ERASE. Category: Verbs. English words: Erase, erase."
+  },
+  {
+    "gloss": "EVENING",
+    "label": "Evening",
+    "category": "Days",
+    "take": "Evening_002",
+    "sinhala_terms": [
+      "සවස"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: EVENING. Category: Days. English words: Evening, evening. Sinhala terms: සවස."
+  },
+  {
+    "gloss": "EXCHANGE",
+    "label": "Exchange",
+    "category": "Verbs",
+    "take": "Exchange_006",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: EXCHANGE. Category: Verbs. English words: Exchange, exchange."
+  },
+  {
+    "gloss": "EYE",
+    "label": "Eye",
+    "category": "Nouns",
+    "take": "Eye_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: EYE. Category: Nouns. English words: Eye, eye."
+  },
+  {
+    "gloss": "EYES",
+    "label": "Eyes",
+    "category": "Nouns",
+    "take": "Eyes_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: EYES. Category: Nouns. English words: Eyes, eyes."
+  },
+  {
+    "gloss": "FACE",
+    "label": "Face",
+    "category": "Nouns",
+    "take": "Face_005",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: FACE. Category: Nouns. English words: Face, face."
+  },
+  {
+    "gloss": "FAMILIES",
+    "label": "Families",
+    "category": "People",
+    "take": "Families_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: FAMILIES. Category: People. English words: Families, families."
+  },
+  {
+    "gloss": "FAMILY",
+    "label": "Family",
+    "category": "People",
+    "take": "Family_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: FAMILY. Category: People. English words: Family, family."
+  },
+  {
+    "gloss": "FAST",
+    "label": "Fast",
+    "category": "Adjectives",
+    "take": "Fast_007",
+    "sinhala_terms": [
+      "වේගවත්",
+      "quick",
+      "swift",
+      "rapid",
+      "ඉක්මන්"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: FAST. Category: Adjectives. English words: Fast, fast. Sinhala terms: වේගවත්, quick, swift, rapid, ඉක්මන්."
+  },
+  {
+    "gloss": "FAT",
+    "label": "Fat",
+    "category": "Adjectives",
+    "take": "Fat_007",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: FAT. Category: Adjectives. English words: Fat, fat."
+  },
+  {
+    "gloss": "FATHER",
+    "label": "Father",
+    "category": "People",
+    "take": "Father_001",
+    "sinhala_terms": [
+      "තාත්තා",
+      "පියා",
+      "dad",
+      "daddy",
+      "papa"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: FATHER. Category: People. English words: Father, father. Sinhala terms: තාත්තා, පියා, dad, daddy, papa."
+  },
+  {
+    "gloss": "FEBRUARY",
+    "label": "February",
+    "category": "Months",
+    "take": "February_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: FEBRUARY. Category: Months. English words: February, february."
+  },
+  {
+    "gloss": "FEEL",
+    "label": "Feel",
+    "category": "Verbs",
+    "take": "Feel_005",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: FEEL. Category: Verbs. English words: Feel, feel."
+  },
+  {
+    "gloss": "FEVER",
+    "label": "Fever",
+    "category": "Nouns",
+    "take": "Fever_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: FEVER. Category: Nouns. English words: Fever, fever."
+  },
+  {
+    "gloss": "FIFTEEN",
+    "label": "15. fifteen",
+    "category": "Numbers",
+    "take": "15. fifteen_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: FIFTEEN. Category: Numbers. English words: 15. fifteen, fifteen."
+  },
+  {
+    "gloss": "FIGHT",
+    "label": "Fight",
+    "category": "Verbs",
+    "take": "Fight_025",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: FIGHT. Category: Verbs. English words: Fight, fight."
+  },
+  {
+    "gloss": "FIVE",
+    "label": "5. five",
+    "category": "Numbers",
+    "take": "5. five_009",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: FIVE. Category: Numbers. English words: 5. five, five."
+  },
+  {
+    "gloss": "FLOWER",
+    "label": "Flower",
+    "category": "Nouns",
+    "take": "Flower_001",
+    "sinhala_terms": [
+      "මල",
+      "මල්"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: FLOWER. Category: Nouns. English words: Flower, flower. Context: flower, bloom, blossom, floral petal. Sinhala terms: මල, මල්."
+  },
+  {
+    "gloss": "FOLLOW",
+    "label": "Follow",
+    "category": "Verbs",
+    "take": "Follow_006",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: FOLLOW. Category: Verbs. English words: Follow, follow."
+  },
+  {
+    "gloss": "FOOD",
+    "label": "Food",
+    "category": "Nouns",
+    "take": "Food_005",
+    "sinhala_terms": [
+      "ආහාර"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: FOOD. Category: Nouns. English words: Food, food. Context: food, meal, edible cuisine, cooked food, dish. Sinhala terms: ආහාර."
+  },
+  {
+    "gloss": "FOUR",
+    "label": "4. four",
+    "category": "Numbers",
+    "take": "4. four_015",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: FOUR. Category: Numbers. English words: 4. four, four."
+  },
+  {
+    "gloss": "FOURTEEN",
+    "label": "14. fourteen",
+    "category": "Numbers",
+    "take": "14. fourteen_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: FOURTEEN. Category: Numbers. English words: 14. fourteen, fourteen."
+  },
+  {
+    "gloss": "FREE",
+    "label": "Free",
+    "category": "Adjectives",
+    "take": "Free_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: FREE. Category: Adjectives. English words: Free, free."
+  },
+  {
+    "gloss": "FRIDAY",
+    "label": "Friday",
+    "category": "Days",
+    "take": "Friday_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: FRIDAY. Category: Days. English words: Friday, friday."
+  },
+  {
+    "gloss": "FULL",
+    "label": "Full",
+    "category": "Adjectives",
+    "take": "Full_010",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: FULL. Category: Adjectives. English words: Full, full."
+  },
+  {
+    "gloss": "GET_UP",
+    "label": "Get up",
+    "category": "Verbs",
+    "take": "Get up_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: GET_UP. Category: Verbs. English words: Get up, get up."
+  },
+  {
+    "gloss": "GIVE",
+    "label": "Give",
+    "category": "Verbs",
+    "take": "Give_009",
+    "sinhala_terms": [
+      "දෙන",
+      "දෙ"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: GIVE. Category: Verbs. English words: Give, give. Sinhala terms: දෙන, දෙ."
+  },
+  {
+    "gloss": "GO",
+    "label": "Go",
+    "category": "Verbs",
+    "take": "Go_034",
+    "sinhala_terms": [
+      "යන",
+      "ය"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: GO. Category: Verbs. English words: Go, go. Sinhala terms: යන, ය."
+  },
+  {
+    "gloss": "GOLD",
+    "label": "Gold",
+    "category": "Colors",
+    "take": "Gold_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: GOLD. Category: Colors. English words: Gold, gold."
+  },
+  {
+    "gloss": "GOOD",
+    "label": "Good",
+    "category": "Adjectives",
+    "take": "Good_014",
+    "sinhala_terms": [
+      "හොඳයි",
+      "හොඳ"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: GOOD. Category: Adjectives. English words: Good, good. Sinhala terms: හොඳයි, හොඳ."
+  },
+  {
+    "gloss": "GOOD_EVENING",
+    "label": "Good evening",
+    "category": "Days",
+    "take": "Good evening_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: GOOD_EVENING. Category: Days. English words: Good evening, good evening."
+  },
+  {
+    "gloss": "GOOD_MORNING",
+    "label": "Good morning",
+    "category": "Days",
+    "take": "Good morning_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: GOOD_MORNING. Category: Days. English words: Good morning, good morning."
+  },
+  {
+    "gloss": "GOOD_NIGHT",
+    "label": "Good night",
+    "category": "Days",
+    "take": "Good night_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: GOOD_NIGHT. Category: Days. English words: Good night, good night."
+  },
+  {
+    "gloss": "GRAND_FATHER",
+    "label": "Grand father",
+    "category": "People",
+    "take": "Grand father_021",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: GRAND_FATHER. Category: People. English words: Grand father, grand father."
+  },
+  {
+    "gloss": "GRAND_MOTHER",
+    "label": "Grand mother",
+    "category": "People",
+    "take": "Grand mother_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: GRAND_MOTHER. Category: People. English words: Grand mother, grand mother."
+  },
+  {
+    "gloss": "GRAND_SON",
+    "label": "Grand son",
+    "category": "People",
+    "take": "Grand son_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: GRAND_SON. Category: People. English words: Grand son, grand son."
+  },
+  {
+    "gloss": "GRAY",
+    "label": "Gray",
+    "category": "Colors",
+    "take": "Gray_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: GRAY. Category: Colors. English words: Gray, gray."
+  },
+  {
+    "gloss": "GREEN",
+    "label": "Green",
+    "category": "Colors",
+    "take": "Green_024",
+    "sinhala_terms": [
+      "කොළ"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: GREEN. Category: Colors. English words: Green, green. Sinhala terms: කොළ."
+  },
+  {
+    "gloss": "GREY",
+    "label": "Grey",
+    "category": "Colors",
+    "take": "Grey_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: GREY. Category: Colors. English words: Grey, grey."
+  },
+  {
+    "gloss": "GROUP",
+    "label": "Group",
+    "category": "Nouns",
+    "take": "Group_005",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: GROUP. Category: Nouns. English words: Group, group."
+  },
+  {
+    "gloss": "GUIDE",
+    "label": "Guide",
+    "category": "Verbs",
+    "take": "Guide_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: GUIDE. Category: Verbs. English words: Guide, guide."
+  },
+  {
+    "gloss": "GUN",
+    "label": "Gun",
+    "category": "Nouns",
+    "take": "Gun_006",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: GUN. Category: Nouns. English words: Gun, gun."
+  },
+  {
+    "gloss": "HANG",
+    "label": "Hang",
+    "category": "Verbs",
+    "take": "Hang_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: HANG. Category: Verbs. English words: Hang, hang."
+  },
+  {
+    "gloss": "HAPPY",
+    "label": "Happy",
+    "category": "Adjectives",
+    "take": "Happy_007",
+    "sinhala_terms": [
+      "සතුටු",
+      "glad",
+      "delighted",
+      "cheerful",
+      "joyful",
+      "සතුටුයි",
+      "සතුට"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: HAPPY. Category: Adjectives. English words: Happy, happy. Sinhala terms: සතුටු, glad, delighted, cheerful, joyful, සතුටුයි, සතුට."
+  },
+  {
+    "gloss": "HARD",
+    "label": "Hard",
+    "category": "Adjectives",
+    "take": "Hard_009",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: HARD. Category: Adjectives. English words: Hard, hard."
+  },
+  {
+    "gloss": "HAT",
+    "label": "Hat",
+    "category": "Nouns",
+    "take": "Hat_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: HAT. Category: Nouns. English words: Hat, hat."
+  },
+  {
+    "gloss": "HE",
+    "label": "He",
+    "category": "Nouns",
+    "take": "He_006",
+    "sinhala_terms": [
+      "ඔහු"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: HE. Category: Nouns. English words: He, he. Sinhala terms: ඔහු."
+  },
+  {
+    "gloss": "HEALTH",
+    "label": "Health",
+    "category": "Nouns",
+    "take": "Health_005",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: HEALTH. Category: Nouns. English words: Health, health."
+  },
+  {
+    "gloss": "HEALTHY",
+    "label": "Healthy",
+    "category": "Adjectives",
+    "take": "Healthy_008",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: HEALTHY. Category: Adjectives. English words: Healthy, healthy."
+  },
+  {
+    "gloss": "HEAR",
+    "label": "Hear",
+    "category": "Verbs",
+    "take": "Hear_007",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: HEAR. Category: Verbs. English words: Hear, hear."
+  },
+  {
+    "gloss": "HELLO",
+    "label": "Hello",
+    "category": "Greetings",
+    "take": "Hello_049",
+    "sinhala_terms": [
+      "ආයුබෝවන්",
+      "ආයුබොවන්",
+      "සුබ උදෑසනක්",
+      "සුබ දවසක්"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: HELLO. Category: Greetings. English words: Hello, hello. Context: greeting, hi, welcome, cordial social meeting. Sinhala terms: ආයුබෝවන්, ආයුබොවන්, සුබ උදෑසනක්, සුබ දවසක්."
+  },
+  {
+    "gloss": "HELP",
+    "label": "Help",
+    "category": "Verbs",
+    "take": "Help_030",
+    "sinhala_terms": [
+      "උදව්"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: HELP. Category: Verbs. English words: Help, help. Sinhala terms: උදව්."
+  },
+  {
+    "gloss": "HERE",
+    "label": "Here",
+    "category": "Adverb",
+    "take": "Here_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: HERE. Category: Adverb. English words: Here, here."
+  },
+  {
+    "gloss": "HIGH",
+    "label": "High",
+    "category": "Adjectives",
+    "take": "High_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: HIGH. Category: Adjectives. English words: High, high."
+  },
+  {
+    "gloss": "HILL",
+    "label": "Hill",
+    "category": "Nouns",
+    "take": "Hill_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: HILL. Category: Nouns. English words: Hill, hill."
+  },
+  {
+    "gloss": "HIT",
+    "label": "Hit",
+    "category": "Verbs",
+    "take": "Hit_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: HIT. Category: Verbs. English words: Hit, hit."
+  },
+  {
+    "gloss": "HOSPITAL",
+    "label": "Hospital",
+    "category": "Places",
+    "take": "Hospital_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: HOSPITAL. Category: Places. English words: Hospital, hospital. Context: hospital, clinic, medical center, healthcare facility, infirmary."
+  },
+  {
+    "gloss": "HOUR",
+    "label": "Hour",
+    "category": "Days",
+    "take": "Hour_026",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: HOUR. Category: Days. English words: Hour, hour."
+  },
+  {
+    "gloss": "HOUSE",
+    "label": "House",
+    "category": "Places",
+    "take": "House_003",
+    "sinhala_terms": [
+      "ගෙදර",
+      "නිවස",
+      "ගෙය"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: HOUSE. Category: Places. English words: House, house. Context: house, home, residence, household, living place. Sinhala terms: ගෙදර, නිවස, ගෙය."
+  },
+  {
+    "gloss": "HOW",
+    "label": "How",
+    "category": "Verbs",
+    "take": "How_002",
+    "sinhala_terms": [
+      "කොහොමද"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: HOW. Category: Verbs. English words: How, how. Sinhala terms: කොහොමද."
+  },
+  {
+    "gloss": "HOW_ARE_YOU",
+    "label": "How are you",
+    "category": "Greetings",
+    "take": "How are you_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: HOW_ARE_YOU. Category: Greetings. English words: How are you, how are you."
+  },
+  {
+    "gloss": "HOW_MANY",
+    "label": "How many",
+    "category": "Nouns",
+    "take": "How many_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: HOW_MANY. Category: Nouns. English words: How many, how many."
+  },
+  {
+    "gloss": "HOW_MUCH",
+    "label": "How much",
+    "category": "Nouns",
+    "take": "How much_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: HOW_MUCH. Category: Nouns. English words: How much, how much."
+  },
+  {
+    "gloss": "HUSBAND",
+    "label": "Husband",
+    "category": "People",
+    "take": "Husband_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: HUSBAND. Category: People. English words: Husband, husband."
+  },
+  {
+    "gloss": "I",
+    "label": "I",
+    "category": "Nouns",
+    "take": "I_011",
+    "sinhala_terms": [
+      "මම",
+      "මා"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: I. Category: Nouns. English words: I, i. Sinhala terms: මම, මා."
+  },
+  {
+    "gloss": "IMPACT",
+    "label": "Impact",
+    "category": "Nouns",
+    "take": "Impact_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: IMPACT. Category: Nouns. English words: Impact, impact."
+  },
+  {
+    "gloss": "IN",
+    "label": "In",
+    "category": "Preposition",
+    "take": "In_005",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: IN. Category: Preposition. English words: In, in."
+  },
+  {
+    "gloss": "INDEPENDENT",
+    "label": "Independent",
+    "category": "Adjectives",
+    "take": "Independent_005",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: INDEPENDENT. Category: Adjectives. English words: Independent, independent."
+  },
+  {
+    "gloss": "INSIDE",
+    "label": "Inside",
+    "category": "Preposition",
+    "take": "Inside_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: INSIDE. Category: Preposition. English words: Inside, inside."
+  },
+  {
+    "gloss": "INSTEAD",
+    "label": "Instead",
+    "category": "Adverb",
+    "take": "Instead_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: INSTEAD. Category: Adverb. English words: Instead, instead."
+  },
+  {
+    "gloss": "INTERNET",
+    "label": "Internet",
+    "category": "Nouns",
+    "take": "Internet_007",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: INTERNET. Category: Nouns. English words: Internet, internet."
+  },
+  {
+    "gloss": "I_KNOW",
+    "label": "I know",
+    "category": "Verbs",
+    "take": "I know_002",
+    "sinhala_terms": [
+      "දන්න"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: I_KNOW. Category: Verbs. English words: I know, i know. Sinhala terms: දන්න."
+  },
+  {
+    "gloss": "JANUARY",
+    "label": "January",
+    "category": "Months",
+    "take": "January_020",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: JANUARY. Category: Months. English words: January, january."
+  },
+  {
+    "gloss": "JULY",
+    "label": "July",
+    "category": "Months",
+    "take": "July_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: JULY. Category: Months. English words: July, july."
+  },
+  {
+    "gloss": "JUMP",
+    "label": "Jump",
+    "category": "Verbs",
+    "take": "Jump_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: JUMP. Category: Verbs. English words: Jump, jump."
+  },
+  {
+    "gloss": "JUNE",
+    "label": "June",
+    "category": "Months",
+    "take": "June_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: JUNE. Category: Months. English words: June, june."
+  },
+  {
+    "gloss": "KEY",
+    "label": "Key",
+    "category": "Nouns",
+    "take": "Key_006",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: KEY. Category: Nouns. English words: Key, key."
+  },
+  {
+    "gloss": "KNOCK",
+    "label": "Knock",
+    "category": "Verbs",
+    "take": "Knock_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: KNOCK. Category: Verbs. English words: Knock, knock."
+  },
+  {
+    "gloss": "LADY",
+    "label": "Lady",
+    "category": "People",
+    "take": "Lady_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: LADY. Category: People. English words: Lady, lady."
+  },
+  {
+    "gloss": "LAPTOP",
+    "label": "Laptop",
+    "category": "Nouns",
+    "take": "Laptop_006",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: LAPTOP. Category: Nouns. English words: Laptop, laptop."
+  },
+  {
+    "gloss": "LAUGH",
+    "label": "Laugh",
+    "category": "Verbs",
+    "take": "Laugh_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: LAUGH. Category: Verbs. English words: Laugh, laugh."
+  },
+  {
+    "gloss": "LEAD",
+    "label": "Lead",
+    "category": "Verbs",
+    "take": "Lead_005",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: LEAD. Category: Verbs. English words: Lead, lead."
+  },
+  {
+    "gloss": "LESS",
+    "label": "Less",
+    "category": "Adjectives",
+    "take": "Less_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: LESS. Category: Adjectives. English words: Less, less."
+  },
+  {
+    "gloss": "LET",
+    "label": "Let",
+    "category": "Verbs",
+    "take": "Let_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: LET. Category: Verbs. English words: Let, let."
+  },
+  {
+    "gloss": "LIKE",
+    "label": "Like",
+    "category": "Verbs",
+    "take": "Like_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: LIKE. Category: Verbs. English words: Like, like."
+  },
+  {
+    "gloss": "LIST",
+    "label": "List",
+    "category": "Nouns",
+    "take": "List_006",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: LIST. Category: Nouns. English words: List, list."
+  },
+  {
+    "gloss": "LISTEN",
+    "label": "Listen",
+    "category": "Verbs",
+    "take": "Listen_004",
+    "sinhala_terms": [
+      "අහන",
+      "hear"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: LISTEN. Category: Verbs. English words: Listen, listen. Sinhala terms: අහන, hear."
+  },
+  {
+    "gloss": "LOCATION",
+    "label": "Location",
+    "category": "Places",
+    "take": "Location_008",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: LOCATION. Category: Places. English words: Location, location."
+  },
+  {
+    "gloss": "LOCK",
+    "label": "Lock",
+    "category": "Nouns",
+    "take": "Lock_007",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: LOCK. Category: Nouns. English words: Lock, lock."
+  },
+  {
+    "gloss": "LOOK",
+    "label": "Look",
+    "category": "Verbs",
+    "take": "Look_025",
+    "sinhala_terms": [
+      "බලන",
+      "බල",
+      "examine",
+      "examined",
+      "inspect",
+      "inspected",
+      "view",
+      "watch",
+      "පරීක්ෂා",
+      "පරීක්ෂණය"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: LOOK. Category: Verbs. English words: Look, look. Sinhala terms: බලන, බල, examine, examined, inspect, inspected, view, watch."
+  },
+  {
+    "gloss": "LOOSE",
+    "label": "Loose",
+    "category": "Adjectives",
+    "take": "Loose_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: LOOSE. Category: Adjectives. English words: Loose, loose."
+  },
+  {
+    "gloss": "LOVE",
+    "label": "Love",
+    "category": "Verbs",
+    "take": "Love_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: LOVE. Category: Verbs. English words: Love, love."
+  },
+  {
+    "gloss": "LOW",
+    "label": "Low",
+    "category": "Adjectives",
+    "take": "Low_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: LOW. Category: Adjectives. English words: Low, low."
+  },
+  {
+    "gloss": "MAKE",
+    "label": "Make",
+    "category": "Verbs",
+    "take": "Make_001",
+    "sinhala_terms": [
+      "හදන",
+      "හද"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: MAKE. Category: Verbs. English words: Make, make. Sinhala terms: හදන, හද."
+  },
+  {
+    "gloss": "MAN",
+    "label": "Man",
+    "category": "People",
+    "take": "Man_022",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: MAN. Category: People. English words: Man, man."
+  },
+  {
+    "gloss": "MARCH",
+    "label": "March",
+    "category": "Months",
+    "take": "March_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: MARCH. Category: Months. English words: March, march."
+  },
+  {
+    "gloss": "MAY",
+    "label": "May",
+    "category": "Months",
+    "take": "May_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: MAY. Category: Months. English words: May, may."
+  },
+  {
+    "gloss": "MEET",
+    "label": "Meet",
+    "category": "Verbs",
+    "take": "Meet_007",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: MEET. Category: Verbs. English words: Meet, meet."
+  },
+  {
+    "gloss": "MIDDLE",
+    "label": "Middle",
+    "category": "Nouns",
+    "take": "Middle_005",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: MIDDLE. Category: Nouns. English words: Middle, middle."
+  },
+  {
+    "gloss": "MILK",
+    "label": "Milk",
+    "category": "Nouns",
+    "take": "Milk_001",
+    "sinhala_terms": [
+      "කිරි"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: MILK. Category: Nouns. English words: Milk, milk. Context: milk, dairy beverage, fresh cow milk. Sinhala terms: කිරි."
+  },
+  {
+    "gloss": "MIND",
+    "label": "Mind",
+    "category": "Nouns",
+    "take": "Mind_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: MIND. Category: Nouns. English words: Mind, mind."
+  },
+  {
+    "gloss": "MONDAY",
+    "label": "Monday",
+    "category": "Days",
+    "take": "Monday_022",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: MONDAY. Category: Days. English words: Monday, monday."
+  },
+  {
+    "gloss": "MONEY",
+    "label": "Money",
+    "category": "Nouns",
+    "take": "Money_024",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: MONEY. Category: Nouns. English words: Money, money."
+  },
+  {
+    "gloss": "MONTH",
+    "label": "Month",
+    "category": "Months",
+    "take": "Month_005",
+    "sinhala_terms": [
+      "මාසය"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: MONTH. Category: Months. English words: Month, month. Sinhala terms: මාසය."
+  },
+  {
+    "gloss": "MOON",
+    "label": "Moon",
+    "category": "Nouns",
+    "take": "Moon_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: MOON. Category: Nouns. English words: Moon, moon."
+  },
+  {
+    "gloss": "MORNING",
+    "label": "Morning",
+    "category": "Days",
+    "take": "Morning_002",
+    "sinhala_terms": [
+      "උදේ"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: MORNING. Category: Days. English words: Morning, morning. Sinhala terms: උදේ."
+  },
+  {
+    "gloss": "MOTHER",
+    "label": "Mother",
+    "category": "People",
+    "take": "Mother_027",
+    "sinhala_terms": [
+      "අම්මා",
+      "මව",
+      "mom",
+      "mommy",
+      "mama"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: MOTHER. Category: People. English words: Mother, mother. Sinhala terms: අම්මා, මව, mom, mommy, mama."
+  },
+  {
+    "gloss": "MOTORCYCLE",
+    "label": "Motorcycle",
+    "category": "Vehicles",
+    "take": "Motorcycle_009",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: MOTORCYCLE. Category: Vehicles. English words: Motorcycle, motorcycle."
+  },
+  {
+    "gloss": "MOVIE",
+    "label": "Movie",
+    "category": "Nouns",
+    "take": "Movie_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: MOVIE. Category: Nouns. English words: Movie, movie. Context: movie, film, cinema, teledrama, drama, television show, video motion picture."
+  },
+  {
+    "gloss": "MULTIPLICATION",
+    "label": "Multiplication",
+    "category": "Numbers",
+    "take": "Multiplication_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: MULTIPLICATION. Category: Numbers. English words: Multiplication, multiplication."
+  },
+  {
+    "gloss": "MY",
+    "label": "My",
+    "category": "Nouns",
+    "take": "My_010",
+    "sinhala_terms": [
+      "මගේ"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: MY. Category: Nouns. English words: My, my. Sinhala terms: මගේ."
+  },
+  {
+    "gloss": "NEAR",
+    "label": "Near",
+    "category": "Preposition",
+    "take": "Near_008",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: NEAR. Category: Preposition. English words: Near, near."
+  },
+  {
+    "gloss": "NETWORK",
+    "label": "Network",
+    "category": "Nouns",
+    "take": "Network_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: NETWORK. Category: Nouns. English words: Network, network."
+  },
+  {
+    "gloss": "NEVER",
+    "label": "Never",
+    "category": "Adverb",
+    "take": "Never_005",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: NEVER. Category: Adverb. English words: Never, never."
+  },
+  {
+    "gloss": "NEXT",
+    "label": "Next",
+    "category": "Adjectives",
+    "take": "Next_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: NEXT. Category: Adjectives. English words: Next, next."
+  },
+  {
+    "gloss": "NEXT_DOOR",
+    "label": "Next door",
+    "category": "Places",
+    "take": "Next door_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: NEXT_DOOR. Category: Places. English words: Next door, next door."
+  },
+  {
+    "gloss": "NICE",
+    "label": "Nice",
+    "category": "Adjectives",
+    "take": "Nice_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: NICE. Category: Adjectives. English words: Nice, nice."
+  },
+  {
+    "gloss": "NIGHT",
+    "label": "Night",
+    "category": "Days",
+    "take": "Night_003",
+    "sinhala_terms": [
+      "රෑ"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: NIGHT. Category: Days. English words: Night, night. Sinhala terms: රෑ."
+  },
+  {
+    "gloss": "NINE",
+    "label": "9. nine",
+    "category": "Numbers",
+    "take": "9. nine_005",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: NINE. Category: Numbers. English words: 9. nine, nine."
+  },
+  {
+    "gloss": "NINETEEN",
+    "label": "19. nineteen",
+    "category": "Numbers",
+    "take": "19. nineteen_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: NINETEEN. Category: Numbers. English words: 19. nineteen, nineteen."
+  },
+  {
+    "gloss": "NO",
+    "label": "No",
+    "category": "Determiner",
+    "take": "No_003",
+    "sinhala_terms": [
+      "නැහැ",
+      "නෑ",
+      "එපා"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: NO. Category: Determiner. English words: No, no. Sinhala terms: නැහැ, නෑ, එපා."
+  },
+  {
+    "gloss": "NONE",
+    "label": "None",
+    "category": "Nouns",
+    "take": "None_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: NONE. Category: Nouns. English words: None, none."
+  },
+  {
+    "gloss": "NOT_GOOD",
+    "label": "Not good",
+    "category": "Adjectives",
+    "take": "Not good_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: NOT_GOOD. Category: Adjectives. English words: Not good, not good."
+  },
+  {
+    "gloss": "NOVEMBER",
+    "label": "November",
+    "category": "Months",
+    "take": "November_006",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: NOVEMBER. Category: Months. English words: November, november."
+  },
+  {
+    "gloss": "NOW",
+    "label": "Now",
+    "category": "Verbs",
+    "take": "Now_001",
+    "sinhala_terms": [
+      "දැන්"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: NOW. Category: Verbs. English words: Now, now. Sinhala terms: දැන්."
+  },
+  {
+    "gloss": "OCTOBER",
+    "label": "October",
+    "category": "Months",
+    "take": "October_007",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: OCTOBER. Category: Months. English words: October, october."
+  },
+  {
+    "gloss": "OK",
+    "label": "Ok",
+    "category": "Nouns",
+    "take": "Ok_007",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: OK. Category: Nouns. English words: Ok, ok."
+  },
+  {
+    "gloss": "OLD",
+    "label": "Old",
+    "category": "Adjectives",
+    "take": "Old_005",
+    "sinhala_terms": [
+      "පරණ"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: OLD. Category: Adjectives. English words: Old, old. Sinhala terms: පරණ."
+  },
+  {
+    "gloss": "ON",
+    "label": "On",
+    "category": "Preposition",
+    "take": "On_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: ON. Category: Preposition. English words: On, on."
+  },
+  {
+    "gloss": "ONE",
+    "label": "1. one",
+    "category": "Numbers",
+    "take": "1. one_011",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: ONE. Category: Numbers. English words: 1. one, one."
+  },
+  {
+    "gloss": "OPEN",
+    "label": "Open",
+    "category": "Verbs",
+    "take": "Open_007",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: OPEN. Category: Verbs. English words: Open, open."
+  },
+  {
+    "gloss": "OR",
+    "label": "Or",
+    "category": "Conjunctions",
+    "take": "Or_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: OR. Category: Conjunctions. English words: Or, or."
+  },
+  {
+    "gloss": "ORANGE",
+    "label": "Orange",
+    "category": "Colors",
+    "take": "Orange_001",
+    "sinhala_terms": [
+      "තැඹිලි"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: ORANGE. Category: Colors. English words: Orange, orange. Sinhala terms: තැඹිලි."
+  },
+  {
+    "gloss": "ORDER",
+    "label": "Order",
+    "category": "Verbs",
+    "take": "Order_006",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: ORDER. Category: Verbs. English words: Order, order."
+  },
+  {
+    "gloss": "OUR",
+    "label": "Our",
+    "category": "Nouns",
+    "take": "Our_003",
+    "sinhala_terms": [
+      "අපේ"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: OUR. Category: Nouns. English words: Our, our. Sinhala terms: අපේ."
+  },
+  {
+    "gloss": "OUT",
+    "label": "Out",
+    "category": "Preposition",
+    "take": "Out_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: OUT. Category: Preposition. English words: Out, out."
+  },
+  {
+    "gloss": "OVER",
+    "label": "Over",
+    "category": "Preposition",
+    "take": "Over_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: OVER. Category: Preposition. English words: Over, over."
+  },
+  {
+    "gloss": "PAINT",
+    "label": "Paint",
+    "category": "Nouns",
+    "take": "Paint_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: PAINT. Category: Nouns. English words: Paint, paint."
+  },
+  {
+    "gloss": "PART",
+    "label": "Part",
+    "category": "Nouns",
+    "take": "Part_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: PART. Category: Nouns. English words: Part, part."
+  },
+  {
+    "gloss": "PAST",
+    "label": "Past",
+    "category": "Adjectives",
+    "take": "Past_008",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: PAST. Category: Adjectives. English words: Past, past."
+  },
+  {
+    "gloss": "PATH",
+    "label": "Path",
+    "category": "Nouns",
+    "take": "Path_005",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: PATH. Category: Nouns. English words: Path, path."
+  },
+  {
+    "gloss": "PEACE",
+    "label": "Peace",
+    "category": "Nouns",
+    "take": "Peace_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: PEACE. Category: Nouns. English words: Peace, peace."
+  },
+  {
+    "gloss": "PEEING",
+    "label": "Peeing",
+    "category": "Verbs",
+    "take": "Peeing_006",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: PEEING. Category: Verbs. English words: Peeing, peeing."
+  },
+  {
+    "gloss": "PENCIL",
+    "label": "Pencil",
+    "category": "Nouns",
+    "take": "Pencil_006",
+    "sinhala_terms": [
+      "පෑන",
+      "පැන්සල"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: PENCIL. Category: Nouns. English words: Pencil, pencil. Sinhala terms: පෑන, පැන්සල."
+  },
+  {
+    "gloss": "PHONE",
+    "label": "Phone",
+    "category": "Nouns",
+    "take": "Phone_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: PHONE. Category: Nouns. English words: Phone, phone."
+  },
+  {
+    "gloss": "PINK",
+    "label": "Pink",
+    "category": "Colors",
+    "take": "Pink_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: PINK. Category: Colors. English words: Pink, pink."
+  },
+  {
+    "gloss": "PLANE",
+    "label": "Plane",
+    "category": "Vehicles",
+    "take": "Plane_029",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: PLANE. Category: Vehicles. English words: Plane, plane."
+  },
+  {
+    "gloss": "PLAY",
+    "label": "Play",
+    "category": "Verbs",
+    "take": "Play_025",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: PLAY. Category: Verbs. English words: Play, play."
+  },
+  {
+    "gloss": "PLAYER",
+    "label": "Player",
+    "category": "People",
+    "take": "Player_006",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: PLAYER. Category: People. English words: Player, player."
+  },
+  {
+    "gloss": "POCKET",
+    "label": "Pocket",
+    "category": "Nouns",
+    "take": "Pocket_015",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: POCKET. Category: Nouns. English words: Pocket, pocket."
+  },
+  {
+    "gloss": "POINT",
+    "label": "Point",
+    "category": "Nouns",
+    "take": "Point_008",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: POINT. Category: Nouns. English words: Point, point."
+  },
+  {
+    "gloss": "POLICE",
+    "label": "Police",
+    "category": "People",
+    "take": "Police_001",
+    "sinhala_terms": [
+      "පොලිසිය"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: POLICE. Category: People. English words: Police, police. Context: police, police officer, law enforcement, security cop. Sinhala terms: පොලිසිය."
+  },
+  {
+    "gloss": "POLICE_STATION",
+    "label": "Police station",
+    "category": "Places",
+    "take": "Police station_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: POLICE_STATION. Category: Places. English words: Police station, police station."
+  },
+  {
+    "gloss": "POSITIVE",
+    "label": "Positive",
+    "category": "Adjectives",
+    "take": "Positive_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: POSITIVE. Category: Adjectives. English words: Positive, positive."
+  },
+  {
+    "gloss": "PRESENT",
+    "label": "Present",
+    "category": "Adjectives",
+    "take": "Present_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: PRESENT. Category: Adjectives. English words: Present, present."
+  },
+  {
+    "gloss": "PROBLEM",
+    "label": "Problem",
+    "category": "Nouns",
+    "take": "Problem_006",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: PROBLEM. Category: Nouns. English words: Problem, problem."
+  },
+  {
+    "gloss": "PULL",
+    "label": "Pull",
+    "category": "Verbs",
+    "take": "Pull_006",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: PULL. Category: Verbs. English words: Pull, pull."
+  },
+  {
+    "gloss": "PURPLE",
+    "label": "Purple",
+    "category": "Colors",
+    "take": "Purple_026",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: PURPLE. Category: Colors. English words: Purple, purple."
+  },
+  {
+    "gloss": "PUT",
+    "label": "Put",
+    "category": "Verbs",
+    "take": "Put_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: PUT. Category: Verbs. English words: Put, put."
+  },
+  {
+    "gloss": "QUICK",
+    "label": "Quick",
+    "category": "Adjectives",
+    "take": "Quick_005",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: QUICK. Category: Adjectives. English words: Quick, quick."
+  },
+  {
+    "gloss": "QUICKLY",
+    "label": "Quickly",
+    "category": "Verbs",
+    "take": "Quickly_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: QUICKLY. Category: Verbs. English words: Quickly, quickly."
+  },
+  {
+    "gloss": "RADIO",
+    "label": "Radio",
+    "category": "Nouns",
+    "take": "Radio_007",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: RADIO. Category: Nouns. English words: Radio, radio."
+  },
+  {
+    "gloss": "RED",
+    "label": "Red",
+    "category": "Colors",
+    "take": "Red_029",
+    "sinhala_terms": [
+      "රතු"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: RED. Category: Colors. English words: Red, red. Sinhala terms: රතු."
+  },
+  {
+    "gloss": "RELATIONS",
+    "label": "Relations",
+    "category": "People",
+    "take": "Relations_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: RELATIONS. Category: People. English words: Relations, relations."
+  },
+  {
+    "gloss": "RICH",
+    "label": "Rich",
+    "category": "Adjectives",
+    "take": "Rich_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: RICH. Category: Adjectives. English words: Rich, rich."
+  },
+  {
+    "gloss": "RING",
+    "label": "Ring",
+    "category": "Nouns",
+    "take": "Ring_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: RING. Category: Nouns. English words: Ring, ring."
+  },
+  {
+    "gloss": "ROAD",
+    "label": "Road",
+    "category": "Places",
+    "take": "Road_020",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: ROAD. Category: Places. English words: Road, road."
+  },
+  {
+    "gloss": "RUN",
+    "label": "Run",
+    "category": "Verbs",
+    "take": "Run_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: RUN. Category: Verbs. English words: Run, run."
+  },
+  {
+    "gloss": "SAME",
+    "label": "Same",
+    "category": "Adjectives",
+    "take": "Same_008",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SAME. Category: Adjectives. English words: Same, same."
+  },
+  {
+    "gloss": "SAND",
+    "label": "Sand",
+    "category": "Nouns",
+    "take": "Sand_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SAND. Category: Nouns. English words: Sand, sand."
+  },
+  {
+    "gloss": "SAREE",
+    "label": "Saree",
+    "category": "Nouns",
+    "take": "Saree_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SAREE. Category: Nouns. English words: Saree, saree."
+  },
+  {
+    "gloss": "SATURDAY",
+    "label": "Saturday",
+    "category": "Days",
+    "take": "Saturday_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SATURDAY. Category: Days. English words: Saturday, saturday."
+  },
+  {
+    "gloss": "SCRATCH",
+    "label": "Scratch",
+    "category": "Verbs",
+    "take": "Scratch_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SCRATCH. Category: Verbs. English words: Scratch, scratch."
+  },
+  {
+    "gloss": "SEARCH",
+    "label": "Search",
+    "category": "Verbs",
+    "take": "Search_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SEARCH. Category: Verbs. English words: Search, search."
+  },
+  {
+    "gloss": "SECONDS",
+    "label": "Seconds",
+    "category": "Days",
+    "take": "Seconds_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SECONDS. Category: Days. English words: Seconds, seconds."
+  },
+  {
+    "gloss": "SEE",
+    "label": "See",
+    "category": "Verbs",
+    "take": "See_028",
+    "sinhala_terms": [
+      "දකින"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: SEE. Category: Verbs. English words: See, see. Sinhala terms: දකින."
+  },
+  {
+    "gloss": "SELECT",
+    "label": "Select",
+    "category": "Verbs",
+    "take": "Select_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SELECT. Category: Verbs. English words: Select, select."
+  },
+  {
+    "gloss": "SELL",
+    "label": "Sell",
+    "category": "Verbs",
+    "take": "Sell_025",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SELL. Category: Verbs. English words: Sell, sell."
+  },
+  {
+    "gloss": "SENIOR",
+    "label": "Senior",
+    "category": "Adjectives",
+    "take": "Senior_005",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SENIOR. Category: Adjectives. English words: Senior, senior."
+  },
+  {
+    "gloss": "SEPTEMBER",
+    "label": "September",
+    "category": "Months",
+    "take": "September_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SEPTEMBER. Category: Months. English words: September, september."
+  },
+  {
+    "gloss": "SEVEN",
+    "label": "7. seven",
+    "category": "Numbers",
+    "take": "7. seven_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SEVEN. Category: Numbers. English words: 7. seven, seven."
+  },
+  {
+    "gloss": "SEVENTEEN",
+    "label": "17. seventeen",
+    "category": "Numbers",
+    "take": "17. seventeen_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SEVENTEEN. Category: Numbers. English words: 17. seventeen, seventeen."
+  },
+  {
+    "gloss": "SHE",
+    "label": "She",
+    "category": "People",
+    "take": "She_001",
+    "sinhala_terms": [
+      "ඇය"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: SHE. Category: People. English words: She, she. Sinhala terms: ඇය."
+  },
+  {
+    "gloss": "SHIRT",
+    "label": "Shirt",
+    "category": "Nouns",
+    "take": "Shirt_005",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SHIRT. Category: Nouns. English words: Shirt, shirt."
+  },
+  {
+    "gloss": "SHOP",
+    "label": "Shop",
+    "category": "Places",
+    "take": "Shop_022",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SHOP. Category: Places. English words: Shop, shop."
+  },
+  {
+    "gloss": "SHOW",
+    "label": "Show",
+    "category": "Verbs",
+    "take": "Show_007",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SHOW. Category: Verbs. English words: Show, show."
+  },
+  {
+    "gloss": "SIGN",
+    "label": "Sign",
+    "category": "Nouns",
+    "take": "Sign_007",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SIGN. Category: Nouns. English words: Sign, sign."
+  },
+  {
+    "gloss": "SIGN_LANGUAGE",
+    "label": "Sign language",
+    "category": "Nouns",
+    "take": "Sign language_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SIGN_LANGUAGE. Category: Nouns. English words: Sign language, sign language."
+  },
+  {
+    "gloss": "SISTER",
+    "label": "Sister",
+    "category": "People",
+    "take": "Sister_002",
+    "sinhala_terms": [
+      "අක්කා",
+      "නංගී"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: SISTER. Category: People. English words: Sister, sister. Sinhala terms: අක්කා, නංගී."
+  },
+  {
+    "gloss": "SISTER_IN_LAW",
+    "label": "Sister in law",
+    "category": "People",
+    "take": "Sister in law_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SISTER_IN_LAW. Category: People. English words: Sister in law, sister in law."
+  },
+  {
+    "gloss": "SIT",
+    "label": "Sit",
+    "category": "Verbs",
+    "take": "Sit_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SIT. Category: Verbs. English words: Sit, sit."
+  },
+  {
+    "gloss": "SIX",
+    "label": "6. six",
+    "category": "Numbers",
+    "take": "6. six_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SIX. Category: Numbers. English words: 6. six, six."
+  },
+  {
+    "gloss": "SIXTEEN",
+    "label": "16. sixteen",
+    "category": "Numbers",
+    "take": "16. sixteen_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SIXTEEN. Category: Numbers. English words: 16. sixteen, sixteen."
+  },
+  {
+    "gloss": "SKIRT",
+    "label": "Skirt",
+    "category": "Nouns",
+    "take": "Skirt_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SKIRT. Category: Nouns. English words: Skirt, skirt."
+  },
+  {
+    "gloss": "SLEEP",
+    "label": "Sleep",
+    "category": "Verbs",
+    "take": "Sleep_004",
+    "sinhala_terms": [
+      "නිදාගන්න"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: SLEEP. Category: Verbs. English words: Sleep, sleep. Sinhala terms: නිදාගන්න."
+  },
+  {
+    "gloss": "SMALL",
+    "label": "Small",
+    "category": "Adjectives",
+    "take": "Small_007",
+    "sinhala_terms": [
+      "පොඩි"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: SMALL. Category: Adjectives. English words: Small, small. Sinhala terms: පොඩි."
+  },
+  {
+    "gloss": "SMILE",
+    "label": "Smile",
+    "category": "Verbs",
+    "take": "Smile_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SMILE. Category: Verbs. English words: Smile, smile."
+  },
+  {
+    "gloss": "SOCIETY",
+    "label": "Society",
+    "category": "Nouns",
+    "take": "Society_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SOCIETY. Category: Nouns. English words: Society, society."
+  },
+  {
+    "gloss": "SOFT",
+    "label": "Soft",
+    "category": "Adjectives",
+    "take": "Soft_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SOFT. Category: Adjectives. English words: Soft, soft."
+  },
+  {
+    "gloss": "SON",
+    "label": "Son",
+    "category": "People",
+    "take": "Son_022",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SON. Category: People. English words: Son, son."
+  },
+  {
+    "gloss": "SONG",
+    "label": "Song",
+    "category": "Nouns",
+    "take": "Song_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SONG. Category: Nouns. English words: Song, song."
+  },
+  {
+    "gloss": "SQUIRREL",
+    "label": "Squirrel",
+    "category": "Nouns",
+    "take": "Squirrel_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SQUIRREL. Category: Nouns. English words: Squirrel, squirrel."
+  },
+  {
+    "gloss": "STOP",
+    "label": "Stop",
+    "category": "Verbs",
+    "take": "Stop_006",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: STOP. Category: Verbs. English words: Stop, stop."
+  },
+  {
+    "gloss": "STREET",
+    "label": "Street",
+    "category": "Nouns",
+    "take": "Street_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: STREET. Category: Nouns. English words: Street, street."
+  },
+  {
+    "gloss": "STRONG",
+    "label": "Strong",
+    "category": "Adjectives",
+    "take": "Strong_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: STRONG. Category: Adjectives. English words: Strong, strong."
+  },
+  {
+    "gloss": "STRUCTURE",
+    "label": "Structure",
+    "category": "Nouns",
+    "take": "Structure_006",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: STRUCTURE. Category: Nouns. English words: Structure, structure."
+  },
+  {
+    "gloss": "STUDY",
+    "label": "Study",
+    "category": "Verbs",
+    "take": "Study_004",
+    "sinhala_terms": [
+      "ඉගෙනගන්න",
+      "පාඩම්",
+      "කියවන",
+      "කියව"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: STUDY. Category: Verbs. English words: Study, study. Context: study, reading, learn, revise, examine, student education, schooling. Sinhala terms: ඉගෙනගන්න, පාඩම්, කියවන, කියව."
+  },
+  {
+    "gloss": "SUBTRACTION",
+    "label": "Subtraction",
+    "category": "Numbers",
+    "take": "Subtraction_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SUBTRACTION. Category: Numbers. English words: Subtraction, subtraction."
+  },
+  {
+    "gloss": "SUIT",
+    "label": "Suit",
+    "category": "Nouns",
+    "take": "Suit_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SUIT. Category: Nouns. English words: Suit, suit."
+  },
+  {
+    "gloss": "SUNDAY",
+    "label": "Sunday",
+    "category": "Days",
+    "take": "Sunday_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SUNDAY. Category: Days. English words: Sunday, sunday."
+  },
+  {
+    "gloss": "SWEEP",
+    "label": "Sweep",
+    "category": "Verbs",
+    "take": "Sweep_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SWEEP. Category: Verbs. English words: Sweep, sweep."
+  },
+  {
+    "gloss": "SWIM",
+    "label": "Swim",
+    "category": "Verbs",
+    "take": "Swim_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: SWIM. Category: Verbs. English words: Swim, swim."
+  },
+  {
+    "gloss": "TABLE",
+    "label": "Table",
+    "category": "Nouns",
+    "take": "Table_005",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: TABLE. Category: Nouns. English words: Table, table."
+  },
+  {
+    "gloss": "TAKE",
+    "label": "Take",
+    "category": "Verbs",
+    "take": "Take_003",
+    "sinhala_terms": [
+      "ගන්න",
+      "ගන්"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: TAKE. Category: Verbs. English words: Take, take. Sinhala terms: ගන්න, ගන්."
+  },
+  {
+    "gloss": "TALK",
+    "label": "Talk",
+    "category": "Verbs",
+    "take": "Talk_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: TALK. Category: Verbs. English words: Talk, talk."
+  },
+  {
+    "gloss": "TEA",
+    "label": "Tea",
+    "category": "Nouns",
+    "take": "Tea_001",
+    "sinhala_terms": [
+      "තේ"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: TEA. Category: Nouns. English words: Tea, tea. Context: tea, Ceylon tea, hot brewed beverage, tea cup. Sinhala terms: තේ."
+  },
+  {
+    "gloss": "TEACH",
+    "label": "Teach",
+    "category": "Verbs",
+    "take": "Teach_002",
+    "sinhala_terms": [
+      "උගන්වන"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: TEACH. Category: Verbs. English words: Teach, teach. Sinhala terms: උගන්වන."
+  },
+  {
+    "gloss": "TEAM",
+    "label": "Team",
+    "category": "Nouns",
+    "take": "Team_005",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: TEAM. Category: Nouns. English words: Team, team."
+  },
+  {
+    "gloss": "TEAR",
+    "label": "Tear",
+    "category": "Verbs",
+    "take": "Tear_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: TEAR. Category: Verbs. English words: Tear, tear."
+  },
+  {
+    "gloss": "TECHNOLOGY",
+    "label": "Technology",
+    "category": "Nouns",
+    "take": "Technology_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: TECHNOLOGY. Category: Nouns. English words: Technology, technology."
+  },
+  {
+    "gloss": "TELEPHONE",
+    "label": "Telephone",
+    "category": "Nouns",
+    "take": "Telephone_011",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: TELEPHONE. Category: Nouns. English words: Telephone, telephone."
+  },
+  {
+    "gloss": "TELL",
+    "label": "Tell",
+    "category": "Verbs",
+    "take": "Tell_024",
+    "sinhala_terms": [
+      "කියන",
+      "speak",
+      "talk",
+      "chat"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: TELL. Category: Verbs. English words: Tell, tell. Sinhala terms: කියන, speak, talk, chat."
+  },
+  {
+    "gloss": "TEMPLE",
+    "label": "Temple",
+    "category": "Places",
+    "take": "Temple_001",
+    "sinhala_terms": [
+      "පන්සල"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: TEMPLE. Category: Places. English words: Temple, temple. Sinhala terms: පන්සල."
+  },
+  {
+    "gloss": "TEN",
+    "label": "10. ten",
+    "category": "Numbers",
+    "take": "10. ten_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: TEN. Category: Numbers. English words: 10. ten, ten."
+  },
+  {
+    "gloss": "TEXT",
+    "label": "Text",
+    "category": "Verbs",
+    "take": "Text_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: TEXT. Category: Verbs. English words: Text, text."
+  },
+  {
+    "gloss": "THAN",
+    "label": "Than",
+    "category": "Preposition",
+    "take": "Than_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: THAN. Category: Preposition. English words: Than, than."
+  },
+  {
+    "gloss": "THANK_YOU",
+    "label": "Thank you",
+    "category": "Greetings",
+    "take": "Thank you_058",
+    "sinhala_terms": [
+      "ස්තූතියි",
+      "බොහොම ස්තූතියි",
+      "ස්තුතියි"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: THANK_YOU. Category: Greetings. English words: Thank you, thank you. Context: gratitude, appreciation, thank you very much, polite thanks. Sinhala terms: ස්තූතියි, බොහොම ස්තූතියි, ස්තුතියි."
+  },
+  {
+    "gloss": "THEY",
+    "label": "They",
+    "category": "Nouns",
+    "take": "They_002",
+    "sinhala_terms": [
+      "ඔවුන්"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: THEY. Category: Nouns. English words: They, they. Sinhala terms: ඔවුන්."
+  },
+  {
+    "gloss": "THIEF",
+    "label": "Thief",
+    "category": "People",
+    "take": "Thief_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: THIEF. Category: People. English words: Thief, thief."
+  },
+  {
+    "gloss": "THINK",
+    "label": "Think",
+    "category": "Verbs",
+    "take": "Think_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: THINK. Category: Verbs. English words: Think, think."
+  },
+  {
+    "gloss": "THIRSTY",
+    "label": "Thirsty",
+    "category": "Adjectives",
+    "take": "Thirsty_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: THIRSTY. Category: Adjectives. English words: Thirsty, thirsty."
+  },
+  {
+    "gloss": "THIRTEEN",
+    "label": "13. thirteen",
+    "category": "Numbers",
+    "take": "13. thirteen_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: THIRTEEN. Category: Numbers. English words: 13. thirteen, thirteen."
+  },
+  {
+    "gloss": "THREE",
+    "label": "3. three",
+    "category": "Numbers",
+    "take": "3. three_008",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: THREE. Category: Numbers. English words: 3. three, three."
+  },
+  {
+    "gloss": "THROW",
+    "label": "Throw",
+    "category": "Verbs",
+    "take": "Throw_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: THROW. Category: Verbs. English words: Throw, throw."
+  },
+  {
+    "gloss": "THURSDAY",
+    "label": "Thursday",
+    "category": "Days",
+    "take": "Thursday_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: THURSDAY. Category: Days. English words: Thursday, thursday."
+  },
+  {
+    "gloss": "TIGHT",
+    "label": "Tight",
+    "category": "Adjectives",
+    "take": "Tight_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: TIGHT. Category: Adjectives. English words: Tight, tight."
+  },
+  {
+    "gloss": "TIME",
+    "label": "Time",
+    "category": "Days",
+    "take": "Time_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: TIME. Category: Days. English words: Time, time."
+  },
+  {
+    "gloss": "TIRE",
+    "label": "Tire",
+    "category": "Vehicles",
+    "take": "Tire_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: TIRE. Category: Vehicles. English words: Tire, tire."
+  },
+  {
+    "gloss": "TO",
+    "label": "To",
+    "category": "Preposition",
+    "take": "To_006",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: TO. Category: Preposition. English words: To, to."
+  },
+  {
+    "gloss": "TODAY",
+    "label": "Today",
+    "category": "Days",
+    "take": "Today_036",
+    "sinhala_terms": [
+      "අද"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: TODAY. Category: Days. English words: Today, today. Context: today, present day, current date, now day. Sinhala terms: අද."
+  },
+  {
+    "gloss": "TOMORROW",
+    "label": "Tomorrow",
+    "category": "Days",
+    "take": "Tomorrow_006",
+    "sinhala_terms": [
+      "හෙට"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: TOMORROW. Category: Days. English words: Tomorrow, tomorrow. Context: tomorrow, next day, upcoming date. Sinhala terms: හෙට."
+  },
+  {
+    "gloss": "TRAIN",
+    "label": "Train",
+    "category": "Vehicles",
+    "take": "Train_002",
+    "sinhala_terms": [
+      "කෝච්චිය",
+      "දුම්රිය"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: TRAIN. Category: Vehicles. English words: Train, train. Context: train, railway, locomotive, railway carriage. Sinhala terms: කෝච්චිය, දුම්රිය."
+  },
+  {
+    "gloss": "TRAIN_STATION",
+    "label": "Train station",
+    "category": "Places",
+    "take": "Train station_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: TRAIN_STATION. Category: Places. English words: Train station, train station."
+  },
+  {
+    "gloss": "TREE",
+    "label": "Tree",
+    "category": "Nouns",
+    "take": "Tree_001",
+    "sinhala_terms": [
+      "ගස",
+      "ගහ",
+      "ගස්"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: TREE. Category: Nouns. English words: Tree, tree. Context: tree, plant, flora, nature tree, timber branch. Sinhala terms: ගස, ගහ, ගස්."
+  },
+  {
+    "gloss": "TRUST",
+    "label": "Trust",
+    "category": "Verbs",
+    "take": "Trust_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: TRUST. Category: Verbs. English words: Trust, trust."
+  },
+  {
+    "gloss": "TUESDAY",
+    "label": "Tuesday",
+    "category": "Days",
+    "take": "Tuesday_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: TUESDAY. Category: Days. English words: Tuesday, tuesday."
+  },
+  {
+    "gloss": "TWELVE",
+    "label": "12. twelve",
+    "category": "Numbers",
+    "take": "12. twelve_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: TWELVE. Category: Numbers. English words: 12. twelve, twelve."
+  },
+  {
+    "gloss": "TWENTY",
+    "label": "20. twenty",
+    "category": "Numbers",
+    "take": "20. twenty_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: TWENTY. Category: Numbers. English words: 20. twenty, twenty."
+  },
+  {
+    "gloss": "TWO",
+    "label": "2. two",
+    "category": "Numbers",
+    "take": "2. two_014",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: TWO. Category: Numbers. English words: 2. two, two."
+  },
+  {
+    "gloss": "UGLY",
+    "label": "Ugly",
+    "category": "Adjectives",
+    "take": "Ugly_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: UGLY. Category: Adjectives. English words: Ugly, ugly."
+  },
+  {
+    "gloss": "UNCLE",
+    "label": "Uncle",
+    "category": "People",
+    "take": "Uncle_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: UNCLE. Category: People. English words: Uncle, uncle."
+  },
+  {
+    "gloss": "UNDERSTAND",
+    "label": "Understand",
+    "category": "Verbs",
+    "take": "Understand_006",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: UNDERSTAND. Category: Verbs. English words: Understand, understand."
+  },
+  {
+    "gloss": "UNTIL",
+    "label": "Until",
+    "category": "Preposition",
+    "take": "Until_005",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: UNTIL. Category: Preposition. English words: Until, until."
+  },
+  {
+    "gloss": "UP",
+    "label": "Up",
+    "category": "Preposition",
+    "take": "Up_005",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: UP. Category: Preposition. English words: Up, up."
+  },
+  {
+    "gloss": "US",
+    "label": "Us",
+    "category": "People",
+    "take": "Us_023",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: US. Category: People. English words: Us, us."
+  },
+  {
+    "gloss": "USE",
+    "label": "Use",
+    "category": "Verbs",
+    "take": "Use_004",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: USE. Category: Verbs. English words: Use, use."
+  },
+  {
+    "gloss": "VAN",
+    "label": "Van",
+    "category": "Vehicles",
+    "take": "Van_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: VAN. Category: Vehicles. English words: Van, van."
+  },
+  {
+    "gloss": "VEHICLE",
+    "label": "Vehicle",
+    "category": "Vehicles",
+    "take": "Vehicle_005",
+    "sinhala_terms": [
+      "වාහනය",
+      "car",
+      "automobile",
+      "van",
+      "lorry",
+      "truck",
+      "කාර්",
+      "ලොරි"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: VEHICLE. Category: Vehicles. English words: Vehicle, vehicle. Sinhala terms: වාහනය, car, automobile, van, lorry, truck, කාර්, ලොරි."
+  },
+  {
+    "gloss": "VISIT",
+    "label": "Visit",
+    "category": "Verbs",
+    "take": "Visit_007",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: VISIT. Category: Verbs. English words: Visit, visit."
+  },
+  {
+    "gloss": "WALK",
+    "label": "Walk",
+    "category": "Verbs",
+    "take": "Walk_024",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: WALK. Category: Verbs. English words: Walk, walk."
+  },
+  {
+    "gloss": "WANT",
+    "label": "Want",
+    "category": "Verbs",
+    "take": "Want_008",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: WANT. Category: Verbs. English words: Want, want."
+  },
+  {
+    "gloss": "WASH",
+    "label": "Wash",
+    "category": "Verbs",
+    "take": "Wash_005",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: WASH. Category: Verbs. English words: Wash, wash."
+  },
+  {
+    "gloss": "WATCH",
+    "label": "Watch",
+    "category": "Verbs",
+    "take": "Watch_006",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: WATCH. Category: Verbs. English words: Watch, watch."
+  },
+  {
+    "gloss": "WEATHER",
+    "label": "Weather",
+    "category": "Nouns",
+    "take": "Weather_006",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: WEATHER. Category: Nouns. English words: Weather, weather."
+  },
+  {
+    "gloss": "WEDNESDAY",
+    "label": "Wednesday",
+    "category": "Days",
+    "take": "Wednesday_016",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: WEDNESDAY. Category: Days. English words: Wednesday, wednesday."
+  },
+  {
+    "gloss": "WEEK",
+    "label": "Week",
+    "category": "Days",
+    "take": "Week_003",
+    "sinhala_terms": [
+      "සතිය"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: WEEK. Category: Days. English words: Week, week. Sinhala terms: සතිය."
+  },
+  {
+    "gloss": "WELCOME",
+    "label": "Welcome",
+    "category": "Adjectives",
+    "take": "Welcome_002",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: WELCOME. Category: Adjectives. English words: Welcome, welcome."
+  },
+  {
+    "gloss": "WHEN",
+    "label": "When",
+    "category": "Adverb",
+    "take": "When_002",
+    "sinhala_terms": [
+      "කවදාද"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: WHEN. Category: Adverb. English words: When, when. Sinhala terms: කවදාද."
+  },
+  {
+    "gloss": "WHERE",
+    "label": "Where",
+    "category": "Adverb",
+    "take": "Where_001",
+    "sinhala_terms": [
+      "කොහෙද"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: WHERE. Category: Adverb. English words: Where, where. Sinhala terms: කොහෙද."
+  },
+  {
+    "gloss": "WHITE",
+    "label": "White",
+    "category": "Colors",
+    "take": "White_046",
+    "sinhala_terms": [
+      "සුදු"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: WHITE. Category: Colors. English words: White, white. Sinhala terms: සුදු."
+  },
+  {
+    "gloss": "WHO",
+    "label": "Who",
+    "category": "Nouns",
+    "take": "Who_001",
+    "sinhala_terms": [
+      "කවුද"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: WHO. Category: Nouns. English words: Who, who. Sinhala terms: කවුද."
+  },
+  {
+    "gloss": "WHOM",
+    "label": "Whom",
+    "category": "Nouns",
+    "take": "Whom_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: WHOM. Category: Nouns. English words: Whom, whom."
+  },
+  {
+    "gloss": "WHOSE",
+    "label": "Whose",
+    "category": "Nouns",
+    "take": "Whose_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: WHOSE. Category: Nouns. English words: Whose, whose."
+  },
+  {
+    "gloss": "WHY",
+    "label": "Why",
+    "category": "Adverb",
+    "take": "Why_004",
+    "sinhala_terms": [
+      "ඇයි"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: WHY. Category: Adverb. English words: Why, why. Sinhala terms: ඇයි."
+  },
+  {
+    "gloss": "WIFE",
+    "label": "Wife",
+    "category": "People",
+    "take": "Wife_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: WIFE. Category: People. English words: Wife, wife."
+  },
+  {
+    "gloss": "WINDOW",
+    "label": "Window",
+    "category": "Nouns",
+    "take": "Window_003",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: WINDOW. Category: Nouns. English words: Window, window."
+  },
+  {
+    "gloss": "WORK",
+    "label": "Work",
+    "category": "Verbs",
+    "take": "Work_001",
+    "sinhala_terms": [
+      "වැඩ"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: WORK. Category: Verbs. English words: Work, work. Sinhala terms: වැඩ."
+  },
+  {
+    "gloss": "WRITE",
+    "label": "Write",
+    "category": "Verbs",
+    "take": "Write_031",
+    "sinhala_terms": [
+      "ලියන",
+      "ලිය"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: WRITE. Category: Verbs. English words: Write, write. Context: write, writing, pencil, pen, notation, document text. Sinhala terms: ලියන, ලිය."
+  },
+  {
+    "gloss": "WRONG",
+    "label": "Wrong",
+    "category": "Adjectives",
+    "take": "Wrong_006",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: WRONG. Category: Adjectives. English words: Wrong, wrong."
+  },
+  {
+    "gloss": "YEAR",
+    "label": "Year",
+    "category": "Months",
+    "take": "Year_001",
+    "sinhala_terms": [
+      "අවුරුද්ද"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: YEAR. Category: Months. English words: Year, year. Sinhala terms: අවුරුද්ද."
+  },
+  {
+    "gloss": "YELLOW",
+    "label": "Yellow",
+    "category": "Colors",
+    "take": "Yellow_044",
+    "sinhala_terms": [
+      "කහ"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: YELLOW. Category: Colors. English words: Yellow, yellow. Sinhala terms: කහ."
+  },
+  {
+    "gloss": "YES",
+    "label": "Yes",
+    "category": "Interjection",
+    "take": "Yes_002",
+    "sinhala_terms": [
+      "ඔව්",
+      "එසේය",
+      "හරි"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: YES. Category: Interjection. English words: Yes, yes. Sinhala terms: ඔව්, එසේය, හරි."
+  },
+  {
+    "gloss": "YESTERDAY",
+    "label": "Yesterday",
+    "category": "Days",
+    "take": "Yesterday_007",
+    "sinhala_terms": [
+      "ඊයේ"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: YESTERDAY. Category: Days. English words: Yesterday, yesterday. Context: yesterday, previous day, past date. Sinhala terms: ඊයේ."
+  },
+  {
+    "gloss": "YOU",
+    "label": "You",
+    "category": "Nouns",
+    "take": "You_047",
+    "sinhala_terms": [
+      "ඔයා",
+      "ඔබ",
+      "ඔයාලා"
+    ],
+    "prototype_text": "Sri Lankan Sign Language concept: YOU. Category: Nouns. English words: You, you. Sinhala terms: ඔයා, ඔබ, ඔයාලා."
+  },
+  {
+    "gloss": "YOUNGER_BRO",
+    "label": "Younger bro",
+    "category": "People",
+    "take": "Younger bro_023",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: YOUNGER_BRO. Category: People. English words: Younger bro, younger bro."
+  },
+  {
+    "gloss": "YOUNGER_SISTER",
+    "label": "Younger sister",
+    "category": "People",
+    "take": "Younger sister_001",
+    "sinhala_terms": [],
+    "prototype_text": "Sri Lankan Sign Language concept: YOUNGER_SISTER. Category: People. English words: Younger sister, younger sister."
+  }
+]
